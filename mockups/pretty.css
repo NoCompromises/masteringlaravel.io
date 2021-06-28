@@ -73,7 +73,24 @@ footer a:hover {
     margin: auto;
 }
 
-#start form {
+/**
+ * custom styles: start page
+ */
+ .start form {
     max-width: 25rem;
     margin: auto;
+}
+
+
+#question {
+    font-size: 0.9rem;
+    font-weight: 300;
+    transition: all 0.8s;
+    margin-left: 0;
+}
+.start #question {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-left: calc(50% - 18rem);
+  width: fit-content;
 }
