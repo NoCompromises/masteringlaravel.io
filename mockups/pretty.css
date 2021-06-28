@@ -24,6 +24,10 @@ header img {
     vertical-align: top;
 }
 
+header a {
+    text-decoration: none;
+}
+
 header h1 {
     font-size: 34px;
     display: inline-block;
@@ -66,5 +70,10 @@ footer a:hover {
 .updates-form {
     display: block;
     max-width: 30rem;
+    margin: auto;
+}
+
+#start form {
+    max-width: 25rem;
     margin: auto;
 }
