@@ -43,10 +43,10 @@
                 </div>
                 <div class="row">
                     <div class="col-12 col-sm-9 mb-3 mb-sm-0">
-                        <input type="text" class="form-control rounded-0" id="fieldName" required>
+                        <input type="text" class="form-control" id="fieldName" required>
                     </div>
                     <div class="col-12 col-sm-3">
-                        <button type="submit" class="btn btn-primary rounded-0">
+                        <button type="submit" class="btn btn-primary">
                             Next
                             <i class="bi bi-caret-right-fill"></i>
                         </button>
@@ -67,11 +67,11 @@
         crossorigin="anonymous"></script>
 
     <script>
-        document.getElementById('vue-does-this-better').addEventListener('submit', e => {
-            e.preventDefault();
+        const form = document.getElementById('vue-does-this-better');
 
-            const container = document.querySelector('.start');
-            container.classList.remove('start');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            window.location.href = 'step-2-theres-so-much-we-can-do.html';
         })
     </script>
 </body>

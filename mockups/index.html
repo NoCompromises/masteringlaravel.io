@@ -56,7 +56,7 @@
                             picanha.
                         </p>
                         <div class="text-center mt-4">
-                            <a href="start.html" class="btn btn-primary rounded-0">
+                            <a href="step-1-we-can-have-lots-of-fun.html" class="btn btn-primary">
                                 Generate Validation Rules
                                 <i class="bi bi-caret-right-fill"></i>
                             </a>
@@ -66,22 +66,30 @@
             </div>
         </section>
         <section class="pt-4 py-5 px-2 bg-light border-top">
-            <div class="text-center">
+            <div class="text-center" id="updates-signup">
                 <h3>Sign up to get updates</h3>
+                <p>
+                    Get updates when we release new features and other projects.
+                </p>
                 <form class="updates-form">
-                    <p>
-                        Get updates when we release new features and other projects.
-                    </p>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control rounded-0" id="email" placeholder="name@example.com"
-                            required>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
                         <label for="email">Email address</label>
                     </div>
-                    <button type="submit" class="btn btn-secondary rounded-0">
+                    <button type="submit" class="btn btn-secondary">
                         Sign Up
                         <i class="ms-2 bi bi-person-plus-fill"></i>
                     </button>
                 </form>
+                <div class="d-none signup-success">
+                    <div class="alert alert-success">
+                        Sweet. You're on our list to know when we release new updates.
+                    </div>
+                    <p>
+                        Now, head over and <a href="step-1-we-can-have-lots-of-fun.html">generate some validation
+                            rules</a>.
+                    </p>
+                </div>
             </div>
         </section>
     </main>
@@ -95,6 +103,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+
+    <script>
+        const form = document.querySelector('.updates-form');
+        const successPanel = document.querySelector('.signup-success');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            form.classList.add('d-none');
+            successPanel.classList.remove('d-none');
+        });
+    </script>
 </body>
 
 </html>

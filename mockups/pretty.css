@@ -1,6 +1,9 @@
 /**
  * Override some styles - we can do this better when we compile this donk
  */
+.btn, .form-control {
+    border-radius: 0;
+}
 .btn-primary {
     background-color: #0477bf;
 }
@@ -67,8 +70,7 @@ footer a:hover {
     font-size: 1.7rem;
 }
 
-.updates-form {
-    display: block;
+#updates-signup {
     max-width: 30rem;
     margin: auto;
 }
