@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="mt-4 card bg-light additional-question d-none">
+                <section class="mt-4 card bg-light additional-question additional-question-last d-none">
                     <div class="card-body">
                         <h6>What type of form input is it?</h6>
                         <div>
@@ -115,6 +115,43 @@
                         </div>
                     </div>
                 </section>
+                <section class="mt-4 card bg-light final-answer d-none">
+                    <div class="card-body">
+                        <h6>What type of form input is it?</h6>
+                        <div>
+                            <code>Numeric</code>
+                        </div>
+                    </div>
+                </section>
+                <section class="mt-4 d-none finish-panel">
+                    <h4 class="text-center">
+                        <i class="bi bi-hand-thumbs-up"></i>
+                        You're Done!
+                    </h4>
+                    <p>
+                        Travel trips taken away go home.
+                        Friends are baskets and hats.
+                        Wishes are hopping and trees are west.
+                        Brushing liked to tutu dark's direction.
+                    </p>
+                    <hr>
+                    <div class="d-flex align-items-center book-cta mt-4">
+                        <div class="flex-shrink-0">
+                            <img src="validation-book-cover.jpg" alt="Book Cover">
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6>Want to Master Validation Rules?</h6>
+                            <p>
+                                TV shows on radio are lazy.
+                                Food is sitting while the weather is flying.
+                                Cold is with the monkey's ears and toes.
+                                Cats, dogs, and babies, it's Tuesday!
+                            </p>
+                            <a href="#" class="btn btn-primary">Check out the Book</a>
+                        </div>
+                    </div>
+                </section>
+
             </div>
             <div class="col-12 col-lg-6 mt-4 mb-4 mt-lg-0">
                 <div class="bg-light border p-3" id="validation-panel">
@@ -127,7 +164,7 @@
                             <a href="#">How do I use these rules?</a>
                         </div>
                         <div class="col-6 text-end">
-                            <button class="btn btn-secondary btn-sm">
+                            <button class="btn btn-secondary btn-sm" title="Copy your validation rules, then click me!">
                                 <i class="bi bi-clipboard"></i>
                                 Copy to Clipboard
                             </button>
@@ -149,13 +186,31 @@
         crossorigin="anonymous"></script>
 
     <script>
-        document.querySelector('.show-next-step').addEventListener('click', () => {
-            document.querySelector('#second-question').classList.add('d-none');
-            document.querySelectorAll('.additional-question').forEach(i => i.classList.remove('d-none'));
-
-            document.querySelector('textarea').textContent = "'title' => [\n\t'required' => true,\n],";
-
+        function scrollToBottom() {
             window.scrollTo(0, document.body.scrollHeight);
+        }
+
+        document.querySelectorAll('.show-next-step').forEach(b => {
+            b.addEventListener('click', () => {
+                document.querySelector('#second-question').classList.add('d-none');
+                document.querySelectorAll('.additional-question').forEach(i => i.classList.remove('d-none'));
+
+                document.querySelector('textarea').textContent = "'title' => [\n\t'required',\n],";
+
+                scrollToBottom();
+            });
+        })
+
+        function showFinish() {
+            document.querySelector('.final-answer').classList.remove('d-none');
+            document.querySelector('.additional-question-last').classList.add('d-none');
+            document.querySelector('.finish-panel').classList.remove('d-none');
+            document.querySelector('textarea').textContent = "'title' => [\n\t'required',\n\t'string',\n\t'max:255',\n],";
+            scrollToBottom();
+        }
+
+        document.querySelectorAll('.finish-button').forEach(b => {
+            b.addEventListener('click', showFinish);
         })
     </script>
 </body>

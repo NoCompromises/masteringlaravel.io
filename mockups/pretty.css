@@ -107,3 +107,10 @@ footer a:hover {
     position: sticky;
     top: 2rem;
 }
+hr {
+    max-width: 50%;
+    margin: auto;
+}
+.book-cta img {
+    height: 10rem;
+}
