@@ -99,4 +99,5 @@ footer a:hover {
 .main-interface textarea {
     height: 20rem;
     font-family: monospace;
+    tab-size: 4;
 }

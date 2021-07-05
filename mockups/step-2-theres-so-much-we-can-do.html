@@ -44,21 +44,28 @@
                 <section class="mt-4 card bg-light">
                     <div class="card-body">
                         <h6>What is the name of your field?</h6>
-                        <p class="mb-0">
+                        <div>
                             <code>title</code>
-                        </p>
-                    </div>
+                        </div>
                 </section>
-                <section class="mt-4 card bg-light">
+                <section class="mt-4 card bg-light" id="second-question">
                     <div class="card-body">
                         <h6>Is the field required to be in the request?</h6>
                         <div class="row">
                             <div class="col-6">
-                                <button class="btn btn-success">Yes</button>
+                                <button class="btn btn-success" id="show-next-step">Yes</button>
                             </div>
                             <div class="col-6 text-end">
                                 <button class="btn btn-danger">No</button>
                             </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="mt-4 card bg-light additional-question d-none">
+                    <div class="card-body">
+                        <h6>Is the field required to be in the request?</h6>
+                        <div>
+                            <code>Yes</code>
                         </div>
                     </div>
                 </section>
@@ -94,6 +101,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
+
+    <script>
+        document.getElementById('show-next-step').addEventListener('click', () => {
+            document.querySelector('#second-question').classList.add('d-none');
+            document.querySelectorAll('.additional-question').forEach(i => i.classList.remove('d-none'));
+
+            document.querySelector('textarea').textContent = "'title' => [\n\t'required' => true,\n],";
+        })
+    </script>
 </body>
 
 </html>
