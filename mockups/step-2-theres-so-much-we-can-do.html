@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="main-interface">
 
 <head>
     <meta charset="utf-8">
@@ -30,9 +30,9 @@
         </div>
     </header>
 
-    <main class="container main-interface">
+    <main class="container">
         <div class="row">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-6 pb-3">
                 <section class="row mt-3">
                     <div class="col-8 fst-italic">
                         We have to ask you a few questions to build your validation rules.
@@ -53,10 +53,10 @@
                         <h6>Is the field required to be in the request?</h6>
                         <div class="row">
                             <div class="col-6">
-                                <button class="btn btn-success" id="show-next-step">Yes</button>
+                                <button class="btn btn-success btn-sm show-next-step">Yes</button>
                             </div>
                             <div class="col-6 text-end">
-                                <button class="btn btn-danger">No</button>
+                                <button class="btn btn-danger btn-sm show-next-step">No</button>
                             </div>
                         </div>
                     </div>
@@ -69,9 +69,55 @@
                         </div>
                     </div>
                 </section>
+                <section class="mt-4 card bg-light additional-question d-none">
+                    <div class="card-body">
+                        <h6>Another question and answer here?</h6>
+                        <div>
+                            <code>No</code>
+                        </div>
+                    </div>
+                </section>
+                <section class="mt-4 card bg-light additional-question d-none">
+                    <div class="card-body">
+                        <h6>Another question and answer here?</h6>
+                        <div>
+                            <code>yes</code>
+                        </div>
+                    </div>
+                </section>
+                <section class="mt-4 card bg-light additional-question d-none">
+                    <div class="card-body">
+                        <h6>Another question and answer here?</h6>
+                        <div>
+                            <code>no</code>
+                        </div>
+                    </div>
+                </section>
+                <section class="mt-4 card bg-light additional-question d-none">
+                    <div class="card-body">
+                        <h6>Another question and answer here?</h6>
+                        <div>
+                            <code>yes</code>
+                        </div>
+                    </div>
+                </section>
+                <section class="mt-4 card bg-light additional-question d-none">
+                    <div class="card-body">
+                        <h6>What type of form input is it?</h6>
+                        <div>
+                            <button class="btn btn-secondary btn-sm mr-1 mb-1 finish-button">Text</button>
+                            <button class="btn btn-secondary btn-sm mr-1 mb-1 finish-button">Numeric</button>
+                            <button class="btn btn-secondary btn-sm mr-1 mb-1 finish-button">Drop down</button>
+                            <button class="btn btn-secondary btn-sm mr-1 mb-1 finish-button">Checkbox</button>
+                            <button class="btn btn-secondary btn-sm mr-1 mb-1 finish-button">Radio</button>
+                            <button class="btn btn-secondary btn-sm mr-1 mb-1 finish-button">Date</button>
+                            <button class="btn btn-secondary btn-sm mr-1 mb-1 finish-button">File</button>
+                        </div>
+                    </div>
+                </section>
             </div>
             <div class="col-12 col-lg-6 mt-4 mb-4 mt-lg-0">
-                <div class="bg-light border p-3">
+                <div class="bg-light border p-3" id="validation-panel">
                     <p class="fst-italic">
                         This should be added to the array of rules sent to your validator instance:
                     </p>
@@ -103,11 +149,13 @@
         crossorigin="anonymous"></script>
 
     <script>
-        document.getElementById('show-next-step').addEventListener('click', () => {
+        document.querySelector('.show-next-step').addEventListener('click', () => {
             document.querySelector('#second-question').classList.add('d-none');
             document.querySelectorAll('.additional-question').forEach(i => i.classList.remove('d-none'));
 
             document.querySelector('textarea').textContent = "'title' => [\n\t'required' => true,\n],";
+
+            window.scrollTo(0, document.body.scrollHeight);
         })
     </script>
 </body>

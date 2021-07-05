@@ -14,9 +14,6 @@
 html {
     font-size: 20px;
 }
-html .main-interface, html .main-interface .form-control, html .main-interface .btn {
-    font-size: 16px;
-}
 
 body {
     font-weight: 300;
@@ -96,8 +93,17 @@ footer a:hover {
 /**
  * Custom styles: main interface
  */
+ .main-interface main, .main-interface .form-control, .main-interface .btn {
+    font-size: 16px;
+}
+
 .main-interface textarea {
-    height: 20rem;
+    height: 40vh;
     font-family: monospace;
     tab-size: 4;
+}
+
+#validation-panel {
+    position: sticky;
+    top: 2rem;
 }
