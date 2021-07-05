@@ -83,16 +83,13 @@ footer a:hover {
     margin: auto;
 }
 
-
 #question {
-    font-size: 0.9rem;
-    font-weight: 300;
-    transition: all 0.8s;
-    margin-left: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+    width: fit-content;
+    margin: auto;
 }
-.start #question {
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin-left: calc(50% - 18rem);
-  width: fit-content;
-}
+
+/**
+ * Custom styles: main interface
+ */
