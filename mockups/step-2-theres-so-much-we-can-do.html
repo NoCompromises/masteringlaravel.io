@@ -30,8 +30,59 @@
         </div>
     </header>
 
-    <main class="container">
-        I am the whole interface!
+    <main class="container main-interface">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <section class="row mt-3">
+                    <div class="col-8 fst-italic">
+                        We have to ask you a few questions to build your validation rules.
+                    </div>
+                    <div class="col-4 text-end">
+                        <a href="step-1-we-can-have-lots-of-fun.html">Start over</a>
+                    </div>
+                </section>
+                <section class="mt-4 card bg-light">
+                    <div class="card-body">
+                        <h6>What is the name of your field?</h6>
+                        <p class="mb-0">
+                            <code>title</code>
+                        </p>
+                    </div>
+                </section>
+                <section class="mt-4 card bg-light">
+                    <div class="card-body">
+                        <h6>Is the field required to be in the request?</h6>
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn btn-success">Yes</button>
+                            </div>
+                            <div class="col-6 text-end">
+                                <button class="btn btn-danger">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-12 col-lg-6 mt-4 mb-4 mt-lg-0">
+                <div class="bg-light border p-3">
+                    <p class="fst-italic">
+                        This should be added to the array of rules sent to your validator instance:
+                    </p>
+                    <textarea class="form-control">'title' => [],</textarea>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <a href="#">How do I use these rules?</a>
+                        </div>
+                        <div class="col-6 text-end">
+                            <button class="btn btn-secondary btn-sm">
+                                <i class="bi bi-clipboard"></i>
+                                Copy to Clipboard
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
