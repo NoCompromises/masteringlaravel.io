@@ -134,20 +134,22 @@
                         Wishes are hopping and trees are west.
                         Brushing liked to tutu dark's direction.
                     </p>
-                    <hr>
-                    <div class="d-flex align-items-center book-cta mt-4">
-                        <div class="flex-shrink-0">
-                            <img src="validation-book-cover.jpg" alt="Book Cover">
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                            <h6>Want to Master Validation Rules?</h6>
-                            <p>
-                                TV shows on radio are lazy.
-                                Food is sitting while the weather is flying.
-                                Cold is with the monkey's ears and toes.
-                                Cats, dogs, and babies, it's Tuesday!
-                            </p>
-                            <a href="#" class="btn btn-primary">Check out the Book</a>
+                    <div class="d-none d-lg-block">
+                        <hr>
+                        <div class="d-flex align-items-center book-cta mt-4">
+                            <div class="flex-shrink-0">
+                                <img src="validation-book-cover.jpg" alt="Book Cover">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6>Want to Master Validation Rules?</h6>
+                                <p>
+                                    TV shows on radio are lazy.
+                                    Food is sitting while the weather is flying.
+                                    Cold is with the monkey's ears and toes.
+                                    Cats, dogs, and babies, it's Tuesday!
+                                </p>
+                                <a href="#" class="btn btn-primary">Check out the Book</a>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -171,6 +173,25 @@
                         </div>
                     </div>
                 </div>
+                <section class="finish-panel d-none">
+                    <div class="d-block d-lg-none">
+                        <div class="d-flex align-items-center book-cta mt-4">
+                            <div class="flex-shrink-0">
+                                <img src="validation-book-cover.jpg" alt="Book Cover">
+                            </div>
+                            <div class="flex-grow-1 ms-3">
+                                <h6>Want to Master Validation Rules?</h6>
+                                <p>
+                                    TV shows on radio are lazy.
+                                    Food is sitting while the weather is flying.
+                                    Cold is with the monkey's ears and toes.
+                                    Cats, dogs, and babies, it's Tuesday!
+                                </p>
+                                <a href="#" class="btn btn-primary">Check out the Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
@@ -204,9 +225,9 @@
         function showFinish() {
             document.querySelector('.final-answer').classList.remove('d-none');
             document.querySelector('.additional-question-last').classList.add('d-none');
-            document.querySelector('.finish-panel').classList.remove('d-none');
+            document.querySelectorAll('.finish-panel').forEach(p => p.classList.remove('d-none'));
             document.querySelector('textarea').textContent = "'title' => [\n\t'required',\n\t'string',\n\t'max:255',\n],";
-            scrollToBottom();
+            window.scrollBy(0, 200);
         }
 
         document.querySelectorAll('.finish-button').forEach(b => {

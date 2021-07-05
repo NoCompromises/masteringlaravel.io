@@ -104,9 +104,14 @@ footer a:hover {
 }
 
 #validation-panel {
-    position: sticky;
     top: 2rem;
 }
+@media (min-width: 576px) {
+    #validation-panel {
+        position: sticky;
+    }
+}
+
 hr {
     max-width: 50%;
     margin: auto;
