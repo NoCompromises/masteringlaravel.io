@@ -2,21 +2,21 @@
  * Override some styles - we can do this better when we compile this donk
  */
 .btn, .form-control, .card {
-    border-radius: 0;
+    border-radius: 0; /* $enable-rounded: false */
 }
 .btn-primary {
-    background-color: #0477bf;
+    background-color: #0477bf; /* $primary: #0477bf; */
 }
 
 /**
  * Shared styles
  */
 html {
-    font-size: 20px;
+    font-size: 20px; /* $font-size-base: 1.25rem; */
 }
 
 body {
-    font-weight: 300;
+    font-weight: 300; /* $font-weight-base: 300; */
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -49,7 +49,7 @@ aside {
 }
 
 footer {
-    background: #333333;
+    background: #333333; /* $secondary: #333333; */
     color: #cccccc;
 }
 
