@@ -1,19 +1,5 @@
 <template>
-  <header>
-    <div class="container pt-3 mb-5">
-      <div class="row">
-        <div class="col-12 col-md-10 text-center text-sm-start">
-          <img src="../assets/logo.svg" alt="No Compromises Logo" />
-          <h1>Laravel Validation Builder</h1>
-        </div>
-        <div class="col-12 col-md-2 mt-3 mt-sm-0">
-          <nav class="text-center text-md-end pt-0 pt-md-2">
-            <a href="https://nocompromises.io">Contact Us</a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>
+  <site-header />
 
   <main>
     <section class="mb-5">
@@ -61,24 +47,20 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container p-3 small text-center">
-      &copy; 2021
-      <a href="https://nocompromises.io" title="We _know_ Laravel!"
-        >No Compromises LLC</a
-      >
-    </div>
-  </footer>
+  <site-footer />
 </template>
 
 <script>
-// @ is an alias to /src
+import SiteHeader from "@/components/SiteHeader.vue";
 import EmailSignUp from "@/components/EmailSignUp.vue";
+import SiteFooter from "@/components/SiteFooter.vue";
 
 export default {
   name: "Home",
   components: {
+    SiteHeader,
     EmailSignUp,
+    SiteFooter,
   },
 };
 </script>
