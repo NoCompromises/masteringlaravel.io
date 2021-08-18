@@ -50,14 +50,19 @@
         />
 
         <question-yes-no
-          question="Is the field required to be in the request?"
+          question="Is the field required to be present in the request?"
           field-name="required"
-          @answer-selected="answerSelected"
+          @answer-selected="
+            answerSelected($event);
+            if ($event.answer === false) {
+              fieldData.allowEmpty = true;
+            }
+          "
         />
 
         <question-yes-no
           v-if="fieldData.required"
-          question="Is it okay for to be empty though?"
+          question="Is it okay for the field to be empty though?"
           field-name="allowEmpty"
           @answer-selected="answerSelected"
         />
@@ -75,6 +80,20 @@
             'Date',
             'File',
           ]"
+          @answer-selected="answerSelected"
+        />
+
+        <question-yes-no
+          v-if="fieldData.inputType === 'Numeric'"
+          question="Do you want to restrict input to integers?"
+          field-name="onlyIntegers"
+          @answer-selected="answerSelected"
+        />
+
+        <question-yes-no
+          v-if="fieldData.inputType === 'Text'"
+          question="Is this an email input?"
+          field-name="email"
           @answer-selected="answerSelected"
         />
       </div>
@@ -106,19 +125,6 @@ export default {
       fieldData: this.getInitialFieldData(),
     };
   },
-  computed: {
-    required() {
-      return this.fieldData.required;
-    },
-  },
-  watch: {
-    required(newValue) {
-      console.log(newValue);
-      if (newValue === false) {
-        this.fieldData.allowEmpty = true;
-      }
-    },
-  },
   methods: {
     resetForm() {
       this.showStartingPoint = true;
@@ -130,6 +136,8 @@ export default {
         required: null,
         allowEmpty: null,
         inputType: null,
+        onlyIntegers: null,
+        email: null,
       };
     },
     answerSelected({ fieldName, answer }) {
