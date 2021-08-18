@@ -53,7 +53,7 @@ import EmailSignUp from "@/components/EmailSignUp.vue";
 import SiteFooter from "@/components/SiteFooter.vue";
 
 export default {
-  name: "Home",
+  name: "ValidationHome",
   components: {
     SiteHeader,
     EmailSignUp,

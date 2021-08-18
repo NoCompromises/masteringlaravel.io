@@ -1,18 +1,18 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
-import Worksheet from "../views/Worksheet.vue";
+import ValidationHome from "../views/ValidationHome.vue";
+import ValidationWorksheet from "../views/ValidationWorksheet.vue";
 import NotFound from "../views/NotFound.vue";
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "ValidationHome",
+    component: ValidationHome,
   },
   {
     path: "/worksheet",
-    name: "Worksheet",
-    component: Worksheet,
+    name: "ValidationWorksheet",
+    component: ValidationWorksheet,
   },
   {
     path: "/:pathMatch(.*)*",
