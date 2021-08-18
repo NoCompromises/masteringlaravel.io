@@ -43,14 +43,7 @@
             <a @click="resetForm" href="#">Start over</a>
           </div>
         </section>
-        <section class="mt-4 card bg-light">
-          <div class="card-body">
-            <h6>What is the name of your field?</h6>
-            <div>
-              <code>{{ fieldData.name }}</code>
-            </div>
-          </div>
-        </section>
+        <question-field-name :name="fieldData.name" />
       </div>
     </main>
   </main>
@@ -61,12 +54,14 @@
 <script>
 import SiteHeader from "@/components/SiteHeader.vue";
 import SiteFooter from "@/components/SiteFooter.vue";
+import QuestionFieldName from "@/components/QuestionFieldName.vue";
 
 export default {
   name: "ValidationWorksheet",
   components: {
     SiteHeader,
     SiteFooter,
+    QuestionFieldName,
   },
   data() {
     return {
