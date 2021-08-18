@@ -30,13 +30,10 @@
               jerky picanha.
             </p>
             <div class="text-center mt-4">
-              <a
-                href="step-1-we-can-have-lots-of-fun.html"
-                class="btn btn-primary"
-              >
+              <router-link to="/worksheet" class="btn btn-primary">
                 Generate Validation Rules
                 <i class="bi bi-caret-right-fill"></i>
-              </a>
+              </router-link>
             </div>
           </div>
         </div>
