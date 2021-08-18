@@ -44,6 +44,7 @@
           </div>
         </section>
         <question-field-name :name="fieldData.name" />
+        <question-required @answer-selected="answerSelected" />
       </div>
     </main>
   </main>
@@ -55,6 +56,7 @@
 import SiteHeader from "@/components/SiteHeader.vue";
 import SiteFooter from "@/components/SiteFooter.vue";
 import QuestionFieldName from "@/components/QuestionFieldName.vue";
+import QuestionRequired from "@/components/QuestionRequired.vue";
 
 export default {
   name: "ValidationWorksheet",
@@ -62,6 +64,7 @@ export default {
     SiteHeader,
     SiteFooter,
     QuestionFieldName,
+    QuestionRequired,
   },
   data() {
     return {
@@ -77,7 +80,11 @@ export default {
     getInitialFieldData() {
       return {
         name: "",
+        required: null,
       };
+    },
+    answerSelected({ fieldName, answer }) {
+      this.fieldData[fieldName] = answer;
     },
   },
 };
