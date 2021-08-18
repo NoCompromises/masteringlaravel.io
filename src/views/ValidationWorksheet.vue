@@ -2,12 +2,12 @@
   <site-header />
 
   <main>
-    <main class="container start">
-      <section class="mb-3">
+    <main class="container" :class="{ start: showStartingPoint }">
+      <section class="mb-3" v-if="showStartingPoint">
         <p id="question">
           We have to ask you a few questions to build your validation rules:
         </p>
-        <form class="mt-3 mt-md-5" id="vue-does-this-better">
+        <form class="mt-3 mt-md-5" @submit.prevent="showStartingPoint = false">
           <div class="row">
             <div class="col-12">
               <label for="fieldName" class="form-label">
@@ -17,7 +17,13 @@
           </div>
           <div class="row">
             <div class="col-12 col-sm-9 mb-3 mb-sm-0">
-              <input type="text" class="form-control" id="fieldName" required />
+              <input
+                type="text"
+                v-model="fieldName"
+                class="form-control"
+                id="fieldName"
+                required
+              />
             </div>
             <div class="col-12 col-sm-3">
               <button type="submit" class="btn btn-primary">
@@ -28,6 +34,24 @@
           </div>
         </form>
       </section>
+      <div class="col-12 col-lg-6 pb-3" v-else>
+        <section class="row mt-3">
+          <div class="col-8 fst-italic">
+            We have to ask you a few questions to build your validation rules.
+          </div>
+          <div class="col-4 text-end">
+            <a @click="resetForm" href="#">Start over</a>
+          </div>
+        </section>
+        <section class="mt-4 card bg-light">
+          <div class="card-body">
+            <h6>What is the name of your field?</h6>
+            <div>
+              <code>{{ fieldName }}</code>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
   </main>
 
@@ -43,6 +67,19 @@ export default {
   components: {
     SiteHeader,
     SiteFooter,
+  },
+  data() {
+    return {
+      showStartingPoint: true,
+      fieldName: "",
+    };
+  },
+  methods: {
+    resetForm() {
+      this.showStartingPoint = true;
+      this.fieldName = ""; // will move into data structure
+      // will need to clear out the whole data structure once it's built
+    },
   },
 };
 </script>
