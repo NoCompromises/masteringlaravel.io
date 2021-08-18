@@ -19,7 +19,7 @@
             <div class="col-12 col-sm-9 mb-3 mb-sm-0">
               <input
                 type="text"
-                v-model="fieldName"
+                v-model="fieldData.name"
                 class="form-control"
                 id="fieldName"
                 required
@@ -47,7 +47,7 @@
           <div class="card-body">
             <h6>What is the name of your field?</h6>
             <div>
-              <code>{{ fieldName }}</code>
+              <code>{{ fieldData.name }}</code>
             </div>
           </div>
         </section>
@@ -71,14 +71,18 @@ export default {
   data() {
     return {
       showStartingPoint: true,
-      fieldName: "",
+      fieldData: this.getInitialFieldData(),
     };
   },
   methods: {
     resetForm() {
       this.showStartingPoint = true;
-      this.fieldName = ""; // will move into data structure
-      // will need to clear out the whole data structure once it's built
+      this.fieldData = this.getInitialFieldData();
+    },
+    getInitialFieldData() {
+      return {
+        name: "",
+      };
     },
   },
 };
