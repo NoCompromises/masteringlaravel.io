@@ -62,11 +62,19 @@
           @answer-selected="answerSelected"
         />
 
-        <question-input-type
+        <question-multiple-choice
           v-if="fieldData.allowEmpty !== null"
-          question="blah blah blah"
+          question="What type of form input is it?"
           field-name="inputType"
-          :values="['text', 'numeric', 'and so on']"
+          :choices="[
+            'Text',
+            'Numeric',
+            'Drop down',
+            'Checkbox',
+            'Radio',
+            'Date',
+            'File',
+          ]"
           @answer-selected="answerSelected"
         />
       </div>
@@ -80,7 +88,7 @@
 import SiteHeader from "@/components/SiteHeader.vue";
 import SiteFooter from "@/components/SiteFooter.vue";
 import QuestionReadOnly from "@/components/QuestionReadOnly.vue";
-import QuestionInputType from "@/components/QuestionInputType.vue";
+import QuestionMultipleChoice from "@/components/QuestionMultipleChoice.vue";
 import QuestionYesNo from "@/components/QuestionYesNo.vue";
 
 export default {
@@ -89,7 +97,7 @@ export default {
     SiteHeader,
     SiteFooter,
     QuestionReadOnly,
-    QuestionInputType,
+    QuestionMultipleChoice,
     QuestionYesNo,
   },
   data() {
