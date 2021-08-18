@@ -1,9 +1,9 @@
 <template>
   <section class="mt-4 card bg-light">
     <div class="card-body">
-      <h6>What is the name of your field?</h6>
+      <h6>{{ question }}</h6>
       <div>
-        <code>{{ name }}</code>
+        <code>{{ answer }}</code>
       </div>
     </div>
   </section>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "QuestionFieldName",
-  props: ["name"],
+  name: "QuestionReadOnly",
+  props: ["question", "answer"],
 };
 </script>

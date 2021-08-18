@@ -43,8 +43,32 @@
             <a @click="resetForm" href="#">Start over</a>
           </div>
         </section>
-        <question-field-name :name="fieldData.name" />
-        <question-required @answer-selected="answerSelected" />
+
+        <question-read-only
+          question="What is the name of your field?"
+          :answer="fieldData.name"
+        />
+
+        <question-yes-no
+          question="Is the field required to be in the request?"
+          field-name="required"
+          @answer-selected="answerSelected"
+        />
+
+        <question-yes-no
+          v-if="fieldData.required"
+          question="Is it okay for to be empty though?"
+          field-name="allowEmpty"
+          @answer-selected="answerSelected"
+        />
+
+        <question-input-type
+          v-if="fieldData.allowEmpty !== null"
+          question="blah blah blah"
+          field-name="inputType"
+          :values="['text', 'numeric', 'and so on']"
+          @answer-selected="answerSelected"
+        />
       </div>
     </main>
   </main>
@@ -55,22 +79,37 @@
 <script>
 import SiteHeader from "@/components/SiteHeader.vue";
 import SiteFooter from "@/components/SiteFooter.vue";
-import QuestionFieldName from "@/components/QuestionFieldName.vue";
-import QuestionRequired from "@/components/QuestionRequired.vue";
+import QuestionReadOnly from "@/components/QuestionReadOnly.vue";
+import QuestionInputType from "@/components/QuestionInputType.vue";
+import QuestionYesNo from "@/components/QuestionYesNo.vue";
 
 export default {
   name: "ValidationWorksheet",
   components: {
     SiteHeader,
     SiteFooter,
-    QuestionFieldName,
-    QuestionRequired,
+    QuestionReadOnly,
+    QuestionInputType,
+    QuestionYesNo,
   },
   data() {
     return {
       showStartingPoint: true,
       fieldData: this.getInitialFieldData(),
     };
+  },
+  computed: {
+    required() {
+      return this.fieldData.required;
+    },
+  },
+  watch: {
+    required(newValue) {
+      console.log(newValue);
+      if (newValue === false) {
+        this.fieldData.allowEmpty = true;
+      }
+    },
   },
   methods: {
     resetForm() {
@@ -81,6 +120,8 @@ export default {
       return {
         name: "",
         required: null,
+        allowEmpty: null,
+        inputType: null,
       };
     },
     answerSelected({ fieldName, answer }) {
