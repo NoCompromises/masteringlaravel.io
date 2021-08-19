@@ -96,6 +96,8 @@
           field-name="email"
           @answer-selected="answerSelected"
         />
+
+        <worksheet-complete v-if="worksheetComplete" />
       </div>
     </main>
   </main>
@@ -109,6 +111,7 @@ import SiteFooter from "@/components/SiteFooter.vue";
 import QuestionReadOnly from "@/components/QuestionReadOnly.vue";
 import QuestionMultipleChoice from "@/components/QuestionMultipleChoice.vue";
 import QuestionYesNo from "@/components/QuestionYesNo.vue";
+import WorksheetComplete from "@/components/WorksheetComplete.vue";
 
 export default {
   name: "ValidationWorksheet",
@@ -118,12 +121,24 @@ export default {
     QuestionReadOnly,
     QuestionMultipleChoice,
     QuestionYesNo,
+    WorksheetComplete,
   },
   data() {
     return {
       showStartingPoint: true,
       fieldData: this.getInitialFieldData(),
     };
+  },
+  computed: {
+    worksheetComplete() {
+      return (
+        ["Drop down", "Checkbox", "Radio", "Date", "File"].includes(
+          this.fieldData.inputType
+        ) ||
+        this.fieldData.onlyIntegers !== null ||
+        this.fieldData.email !== null
+      );
+    },
   },
   methods: {
     resetForm() {
