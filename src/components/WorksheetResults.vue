@@ -13,7 +13,9 @@
 
     <div class="row mt-3">
       <div class="col-6">
-        <a href="#">How do I use these rules?</a>
+        <a href="#" @click="showInstructions = !showInstructions"
+          >How do I use these rules?</a
+        >
       </div>
       <div class="col-6 text-end">
         <button
@@ -24,6 +26,16 @@
           Copy to Clipboard
         </button>
       </div>
+    </div>
+
+    <div v-if="showInstructions" class="row mt-3">
+      <h4>Use this? Can I? Should I? Dare I????</h4>
+      <p>
+        A man once told me something that shook my mind within inches of
+        collapse. He leaned in, and with four soft-spoken words, he left a
+        permanent mark on my very being. He said...hold on, be right back. I'll
+        finish this story later, I promise.
+      </p>
     </div>
   </div>
 </template>
@@ -36,6 +48,11 @@ export default {
     recommendedRules() {
       return `'${this.answers.name}' => ${buildResults(this.answers)}`;
     },
+  },
+  data() {
+    return {
+      showInstructions: false,
+    };
   },
 };
 

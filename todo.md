@@ -33,7 +33,7 @@ Create worksheet
 1. X Create WorksheetResults component
     * X accepts data structure and calculates validation rules from it
 1. X fix finish panel for different viewport size
-1. How do I use? - expand to show some text (text TBD)
+1. X How do I use? - expand to show some text (text TBD)
 1. copy to clipboard use JS api
 1. make sure Done message scrolls into view
 1. allow user to change answers - maybe just undo to take them back a single step
