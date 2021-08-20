@@ -18,7 +18,11 @@
         >
       </div>
       <div class="col-6 text-end">
+        <transition name="fade">
+          <i v-if="clipboardFlashSuccess" class="bi bi-hand-thumbs-up me-2" />
+        </transition>
         <button
+          @click="putRulesOnClipboard"
           class="btn btn-secondary btn-sm"
           title="Copy your validation rules, then click me!"
         >
@@ -52,7 +56,20 @@ export default {
   data() {
     return {
       showInstructions: false,
+      clipboardFlashSuccess: false,
     };
+  },
+  methods: {
+    putRulesOnClipboard() {
+      navigator.clipboard.writeText(this.recommendedRules).then(() => {
+        this.clipboardFlashSuccess = true;
+        setTimeout(() => (this.clipboardFlashSuccess = false), 1500);
+      }),
+        () =>
+          alert(
+            "Clipboard access denied. Use your keyboard the old-fashioned way!"
+          );
+    },
   },
 };
 
@@ -74,7 +91,7 @@ function formatArray(results) {
   let formattedRules = "";
   results.forEach((rule) => (formattedRules += `\t${rule},\n`));
 
-  return `[\n` + formattedRules + `]`;
+  return `[\n` + formattedRules + `],`;
 }
 
 function getAvailabilityRules(answers) {
