@@ -97,10 +97,16 @@
           @answer-selected="answerSelected"
         />
 
-        <worksheet-complete v-if="worksheetComplete" />
+        <worksheet-complete v-if="worksheetComplete">
+          <book-info class="d-none d-lg-block" />
+        </worksheet-complete>
       </div>
 
-      <worksheet-results :answers="fieldData" />
+      <div class="col-12 col-lg-6 mt-4 mb-4 mt-lg-0">
+        <worksheet-results :answers="fieldData" />
+
+        <book-info v-if="worksheetComplete" class="d-block d-lg-none" />
+      </div>
     </div>
   </main>
 
@@ -115,6 +121,7 @@ import QuestionMultipleChoice from "@/components/QuestionMultipleChoice.vue";
 import QuestionYesNo from "@/components/QuestionYesNo.vue";
 import WorksheetComplete from "@/components/WorksheetComplete.vue";
 import WorksheetResults from "@/components/WorksheetResults.vue";
+import BookInfo from "@/components/BookInfo.vue";
 
 export default {
   name: "ValidationWorksheet",
@@ -126,6 +133,7 @@ export default {
     QuestionYesNo,
     WorksheetComplete,
     WorksheetResults,
+    BookInfo,
   },
   data() {
     return {

@@ -30,23 +30,43 @@ Create worksheet
 1. X Create QuestionAllowEmpty component, Yes / No
 1. X Create QuestionFieldType component, choose one of many
 1. X Create WorksheetComplete component
-1. Create WorksheetResults component
+1. X Create WorksheetResults component
     * X accepts data structure and calculates validation rules from it
-    * What are the rules for the remaining form inputs?
-    * How do I use? - expand to show some text (text TBD)
-    * copy to clipboard use JS api
-1. Text - type password
+1. X fix finish panel for different viewport size
+1. How do I use? - expand to show some text (text TBD)
+1. copy to clipboard use JS api
+1. make sure Done message scrolls into view
+1. allow user to change answers - maybe just undo to take them back a single step
+1. Implement rules for the remaining form inputs
+        Dropdown - string
+            Where are the dropdown values coming from? PHP array, database
+                Rule::in($array)
+                Rule::exists($table, $columnNameIfDifferentFromRequestFieldName)
+        Checkbox
+            Is it a single checkbox: Yes - boolean, No - array support coming soon
+        Radio - string
+            Where are the dropdown values coming from? PHP array, database
+                Rule::in($array)
+                Rule::exists($table, $columnNameIfDifferentFromRequestFieldName)
+        Date - string
+            Do you care about the date format? Yes - date_format:yyyy-mm-dd, No: date
+        File - file
+            Do you want to restrict file types? mimes:list,png,pdf,etc
+            What is the maximum size? less than 1mb, 5m, 10m, 20m
+1. Filter database column types based on field input type
+    * Text/Drop down/Radio
+        CHAR, VARCHAR, TEXT (various flavors)
+        pick default that lines up with laravel migration, add comment in rules to change as needed
+    * Numeric
+        INT (various flavors)
+        DECIMAL/DEC/NUMERIC/FIXED/FLOAT/DOUBLE/REAL (v2)
+    * Checkbox/File/Date - don't need to ask about database
+1. mixin for setAnswer
+1. Add ?ref to NC links or any other CTA-ish stuff
+1. Should anything take you back from Worksheet to Home?
+1. there has to be a better way to use header/footer on every view, solve fragment complaint    
+1. Text - type password (maybe v2)
     * any rules to suggest or do we need multiple fields for confirmed or something more complex?
-1. Text - type email
+1. Text - type email (maybe v2)
     * how important is it to you that the email is correct? dns
     * also suggest typo package or feedback loop
-1. Dropdown list - let them specify allowed values? might be stupid if super long or from database
-    * ask if from db then stub out exists rule?
-    * otherwise stub out in rule with array placeholder?
-1. checkbox / radio - I don't remember comment about arrays not supported, like
-
-mixin for setAnswer
-
-Add ?ref to NC links or any other CTA-ish stuff
-Should anything take you back from Worksheet to Home?
-there has to be a better way to use header/footer on every view, solve fragment complaint
