@@ -133,6 +133,15 @@ function getTypeRules(answers) {
 
       break;
 
+    case "Checkbox":
+      if (answers.singleCheckbox) {
+        rules.push(`'boolean'`);
+      } else if (answers.singleCheckbox === false) {
+        rules.push(`// array support coming soon`);
+      }
+
+      break;
+
     default:
       break;
   }

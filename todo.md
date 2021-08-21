@@ -41,7 +41,7 @@ Create worksheet
             Where are the dropdown values coming from? PHP array, database
                 Rule::in($array)
                 Rule::exists($table, $columnNameIfDifferentFromRequestFieldName)
-        Checkbox
+        X Checkbox
             Is it a single checkbox: Yes - boolean, No - array support coming soon
         Radio - string
             Where are the dropdown values coming from? PHP array, database

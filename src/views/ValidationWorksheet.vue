@@ -105,6 +105,13 @@
           @answer-selected="answerSelected"
         />
 
+        <question-yes-no
+          v-if="fieldData.inputType === 'Checkbox'"
+          question="Is it a single checkbox?"
+          field-name="singleCheckbox"
+          @answer-selected="answerSelected"
+        />
+
         <worksheet-complete v-if="worksheetComplete">
           <book-info class="d-none d-lg-block" />
         </worksheet-complete>
@@ -152,12 +159,11 @@ export default {
   computed: {
     worksheetComplete() {
       return (
-        ["Checkbox", "Radio", "Date", "File"].includes(
-          this.fieldData.inputType
-        ) ||
+        ["Radio", "Date", "File"].includes(this.fieldData.inputType) ||
         this.fieldData.onlyIntegers !== null ||
         this.fieldData.email !== null ||
-        this.fieldData.dropDownSource !== null
+        this.fieldData.dropDownSource !== null ||
+        this.fieldData.singleCheckbox !== null
       );
     },
   },
@@ -175,6 +181,7 @@ export default {
         onlyIntegers: null,
         email: null,
         dropDownSource: null,
+        singleCheckbox: null,
       };
     },
     answerSelected({ fieldName, answer }) {
