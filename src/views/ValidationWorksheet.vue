@@ -169,6 +169,7 @@ export default {
     },
     answerSelected({ fieldName, answer }) {
       this.fieldData[fieldName] = answer;
+      this.$nextTick(() => window.scrollTo(0, document.body.scrollHeight));
     },
   },
 };
