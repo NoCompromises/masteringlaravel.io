@@ -147,6 +147,14 @@ function getTypeRules(answers) {
 
       break;
 
+    case "Date":
+      if (answers.dateFormat) {
+        rules.push(`'date_format:yyyy-mm-dd'`);
+      } else if (answers.dateFormat === false) {
+        rules.push(`'date'`);
+      }
+      break;
+
     default:
       break;
   }

@@ -120,6 +120,13 @@
           @answer-selected="answerSelected"
         />
 
+        <question-yes-no
+          v-if="fieldData.inputType === 'Date'"
+          question="Do you care about the date format?"
+          field-name="dateFormat"
+          @answer-selected="answerSelected"
+        />
+
         <worksheet-complete v-if="worksheetComplete">
           <book-info class="d-none d-lg-block" />
         </worksheet-complete>
@@ -167,12 +174,13 @@ export default {
   computed: {
     worksheetComplete() {
       return (
-        ["Date", "File"].includes(this.fieldData.inputType) ||
+        ["File"].includes(this.fieldData.inputType) ||
         this.fieldData.onlyIntegers !== null ||
         this.fieldData.email !== null ||
         this.fieldData.dropDownSource !== null ||
         this.fieldData.singleCheckbox !== null ||
-        this.fieldData.radioSource !== null
+        this.fieldData.radioSource !== null ||
+        this.fieldData.dateFormat !== null
       );
     },
   },
@@ -192,6 +200,7 @@ export default {
         dropDownSource: null,
         singleCheckbox: null,
         radioSource: null,
+        dateFormat: null,
       };
     },
     answerSelected({ fieldName, answer }) {

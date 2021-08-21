@@ -47,7 +47,7 @@ Create worksheet
             Where are the dropdown values coming from? PHP array, database
                 Rule::in($array)
                 Rule::exists($table, $columnNameIfDifferentFromRequestFieldName)
-        Date - string
+        X Date - string
             Do you care about the date format? Yes - date_format:yyyy-mm-dd, No: date
         File - file
             Do you want to restrict file types? mimes:list,png,pdf,etc
