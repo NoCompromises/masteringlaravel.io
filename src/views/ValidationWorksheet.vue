@@ -112,6 +112,14 @@
           @answer-selected="answerSelected"
         />
 
+        <question-multiple-choice
+          v-if="fieldData.inputType === 'Radio'"
+          question="Where are the radio values coming from?"
+          field-name="radioSource"
+          :choices="['PHP array', 'Database']"
+          @answer-selected="answerSelected"
+        />
+
         <worksheet-complete v-if="worksheetComplete">
           <book-info class="d-none d-lg-block" />
         </worksheet-complete>
@@ -159,11 +167,12 @@ export default {
   computed: {
     worksheetComplete() {
       return (
-        ["Radio", "Date", "File"].includes(this.fieldData.inputType) ||
+        ["Date", "File"].includes(this.fieldData.inputType) ||
         this.fieldData.onlyIntegers !== null ||
         this.fieldData.email !== null ||
         this.fieldData.dropDownSource !== null ||
-        this.fieldData.singleCheckbox !== null
+        this.fieldData.singleCheckbox !== null ||
+        this.fieldData.radioSource !== null
       );
     },
   },
@@ -182,6 +191,7 @@ export default {
         email: null,
         dropDownSource: null,
         singleCheckbox: null,
+        radioSource: null,
       };
     },
     answerSelected({ fieldName, answer }) {

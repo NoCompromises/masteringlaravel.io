@@ -142,6 +142,11 @@ function getTypeRules(answers) {
 
       break;
 
+    case "Radio":
+      rules.push(`'string'`);
+
+      break;
+
     default:
       break;
   }
@@ -157,6 +162,15 @@ function getBoundsRules(answers) {
       if (answers.dropDownSource === "PHP array") {
         rules.push(`Rule::in($array)`);
       } else if (answers.dropDownSource === "Database") {
+        rules.push(`Rule::exists($table, $column)`);
+      }
+
+      break;
+
+    case "Radio":
+      if (answers.radioSource === "PHP array") {
+        rules.push(`Rule::in($array)`);
+      } else if (answers.radioSource === "Database") {
         rules.push(`Rule::exists($table, $column)`);
       }
 
