@@ -97,6 +97,14 @@
           @answer-selected="answerSelected"
         />
 
+        <question-multiple-choice
+          v-if="fieldData.inputType === 'Drop down'"
+          question="Where are the drop down values coming from?"
+          field-name="dropDownSource"
+          :choices="['PHP array', 'Database']"
+          @answer-selected="answerSelected"
+        />
+
         <worksheet-complete v-if="worksheetComplete">
           <book-info class="d-none d-lg-block" />
         </worksheet-complete>
@@ -144,11 +152,12 @@ export default {
   computed: {
     worksheetComplete() {
       return (
-        ["Drop down", "Checkbox", "Radio", "Date", "File"].includes(
+        ["Checkbox", "Radio", "Date", "File"].includes(
           this.fieldData.inputType
         ) ||
         this.fieldData.onlyIntegers !== null ||
-        this.fieldData.email !== null
+        this.fieldData.email !== null ||
+        this.fieldData.dropDownSource !== null
       );
     },
   },
@@ -165,6 +174,7 @@ export default {
         inputType: null,
         onlyIntegers: null,
         email: null,
+        dropDownSource: null,
       };
     },
     answerSelected({ fieldName, answer }) {

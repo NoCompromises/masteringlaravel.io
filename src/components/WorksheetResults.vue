@@ -128,6 +128,11 @@ function getTypeRules(answers) {
 
       break;
 
+    case "Drop down":
+      rules.push(`'string'`);
+
+      break;
+
     default:
       break;
   }
@@ -135,8 +140,23 @@ function getTypeRules(answers) {
   return rules;
 }
 
-function getBoundsRules() {
-  return [];
+function getBoundsRules(answers) {
+  let rules = [];
+
+  switch (answers.inputType) {
+    case "Drop down":
+      if (answers.dropDownSource === "PHP array") {
+        rules.push(`Rule::in($array)`);
+      } else if (answers.dropDownSource === "Database") {
+        rules.push(`Rule::exists($table, $column)`);
+      }
+
+      break;
+
+    default:
+      break;
+  }
+  return rules;
 }
 
 function getCustomRules() {
