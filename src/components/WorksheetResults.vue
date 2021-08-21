@@ -184,6 +184,30 @@ function getBoundsRules(answers) {
 
       break;
 
+    case "File":
+      if (answers.fileTypes) {
+        rules.push(`'mime_types:list,png,pdf,etc'`);
+      }
+
+      switch (answers.maxFileSize) {
+        case "1 MB":
+          rules.push(`'max:1024'`);
+          break;
+        case "5 MB":
+          rules.push(`'max:5120'`);
+          break;
+        case "10 MB":
+          rules.push(`'max:10240'`);
+          break;
+        case "20 MB":
+          rules.push(`'max:20480'`);
+          break;
+        default:
+          break;
+      }
+
+      break;
+
     default:
       break;
   }

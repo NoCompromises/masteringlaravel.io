@@ -127,6 +127,21 @@
           @answer-selected="answerSelected"
         />
 
+        <question-yes-no
+          v-if="fieldData.inputType === 'File'"
+          question="Do you want to restrict file types?"
+          field-name="fileTypes"
+          @answer-selected="answerSelected"
+        />
+
+        <question-multiple-choice
+          v-if="fieldData.inputType === 'File' && fieldData.fileTypes !== null"
+          question="What is the maximum size?"
+          field-name="maxFileSize"
+          :choices="['1 MB', '5 MB', '10 MB', '20 MB']"
+          @answer-selected="answerSelected"
+        />
+
         <worksheet-complete v-if="worksheetComplete">
           <book-info class="d-none d-lg-block" />
         </worksheet-complete>
@@ -174,13 +189,13 @@ export default {
   computed: {
     worksheetComplete() {
       return (
-        ["File"].includes(this.fieldData.inputType) ||
         this.fieldData.onlyIntegers !== null ||
         this.fieldData.email !== null ||
         this.fieldData.dropDownSource !== null ||
         this.fieldData.singleCheckbox !== null ||
         this.fieldData.radioSource !== null ||
-        this.fieldData.dateFormat !== null
+        this.fieldData.dateFormat !== null ||
+        this.fieldData.maxFileSize !== null
       );
     },
   },
@@ -201,6 +216,8 @@ export default {
         singleCheckbox: null,
         radioSource: null,
         dateFormat: null,
+        fileTypes: null,
+        maxFileSize: null,
       };
     },
     answerSelected({ fieldName, answer }) {

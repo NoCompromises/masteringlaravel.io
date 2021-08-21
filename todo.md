@@ -49,7 +49,7 @@ Create worksheet
                 Rule::exists($table, $columnNameIfDifferentFromRequestFieldName)
         X Date - string
             Do you care about the date format? Yes - date_format:yyyy-mm-dd, No: date
-        File - file
+        X File - file
             Do you want to restrict file types? mimes:list,png,pdf,etc
             What is the maximum size? less than 1mb, 5m, 10m, 20m
 1. Filter database column types based on field input type
