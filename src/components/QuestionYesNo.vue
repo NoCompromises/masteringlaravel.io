@@ -27,23 +27,19 @@
 </template>
 
 <script>
+import useAnswerQuestions from "@/composables/useAnswerQuestions";
+
 export default {
   name: "QuestionYesNo",
   props: ["question", "fieldName"],
   emits: ["answerSelected"],
-  data() {
+  setup(props, context) {
+    const { answer, setAnswer } = useAnswerQuestions(props.fieldName, context);
+
     return {
-      answer: null,
+      answer,
+      setAnswer,
     };
-  },
-  methods: {
-    setAnswer(value) {
-      this.answer = value;
-      this.$emit("answerSelected", {
-        fieldName: this.fieldName,
-        answer: value,
-      });
-    },
   },
 };
 </script>

@@ -60,8 +60,8 @@ Create worksheet
         INT (various flavors)
         DECIMAL/DEC/NUMERIC/FIXED/FLOAT/DOUBLE/REAL (v2)
     * Checkbox/File/Date - don't need to ask about database
-1. mixin for setAnswer
-1. Add ?ref to NC links or any other CTA-ish stuff
+1. X Add ?ref to NC links or any other CTA-ish stuff
+1. X mixin for setAnswer
 1. allow user to change answers - maybe just undo to take them back a single step
 1. Should anything take you back from Worksheet to Home?
 1. there has to be a better way to use header/footer on every view, solve fragment complaint    
