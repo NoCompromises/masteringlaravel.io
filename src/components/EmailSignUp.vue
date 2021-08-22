@@ -33,8 +33,8 @@
         </div>
         <p>
           Now, head over and
-          <a href="step-1-we-can-have-lots-of-fun.html"
-            >generate some validation rules</a
+          <router-link to="/worksheet"
+            >generate some validation rules</router-link
           >.
         </p>
       </div>
