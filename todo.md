@@ -36,7 +36,7 @@ Create worksheet
 1. X How do I use? - expand to show some text (text TBD)
 1. X copy to clipboard use JS api
 1. X make sure Done message scrolls into view
-1. Implement rules for the remaining form inputs
+1. X Implement rules for the remaining form inputs
         X Dropdown - string
             Where are the dropdown values coming from? PHP array, database
                 Rule::in($array)
@@ -52,7 +52,7 @@ Create worksheet
         X File - file
             Do you want to restrict file types? mimes:list,png,pdf,etc
             What is the maximum size? less than 1mb, 5m, 10m, 20m
-1. Filter database column types based on field input type
+1. X Filter database column types based on field input type
     * Text/Drop down/Radio
         CHAR, VARCHAR, TEXT (various flavors)
         pick default that lines up with laravel migration, add comment in rules to change as needed

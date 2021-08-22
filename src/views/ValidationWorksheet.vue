@@ -142,6 +142,21 @@
           @answer-selected="answerSelected"
         />
 
+        <question-yes-no
+          v-if="needDatabaseInfo"
+          question="Will this be data be stored in a database?"
+          field-name="storeInDatabase"
+          @answer-selected="answerSelected"
+        />
+
+        <question-multiple-choice
+          v-if="needDatabaseInfo && fieldData.storeInDatabase"
+          question="What type of database field are you using?"
+          field-name="databaseFieldType"
+          :choices="databaseFieldChoices"
+          @answer-selected="answerSelected"
+        />
+
         <worksheet-complete v-if="worksheetComplete">
           <book-info class="d-none d-lg-block" />
         </worksheet-complete>
@@ -187,7 +202,7 @@ export default {
     };
   },
   computed: {
-    worksheetComplete() {
+    fileInputComplete() {
       return (
         this.fieldData.onlyIntegers !== null ||
         this.fieldData.email !== null ||
@@ -196,6 +211,37 @@ export default {
         this.fieldData.radioSource !== null ||
         this.fieldData.dateFormat !== null ||
         this.fieldData.maxFileSize !== null
+      );
+    },
+    needDatabaseInfo() {
+      return (
+        this.fileInputComplete &&
+        (["Text", "Drop down", "Radio"].includes(this.fieldData.inputType) ||
+          this.fieldData.onlyIntegers)
+      );
+    },
+    databaseFieldChoices() {
+      return this.fieldData.inputType === "Numeric"
+        ? [
+            "TINYINT",
+            "TINYINT UNSIGNED",
+            "SMALLINT",
+            "SMALLINT UNSIGNED",
+            "MEDIUMINT",
+            "MEDIUMINT UNSIGNED",
+            "INT",
+            "INT UNSIGNED",
+            "BIGINT",
+            "BIGINT UNSIGNED",
+          ]
+        : ["CHAR", "VARCHAR", "TINYTEXT", "TEXT", "MEDIUMTEXT", "LONGTEXT"];
+    },
+    worksheetComplete() {
+      return (
+        this.fileInputComplete &&
+        (!this.needDatabaseInfo ||
+          this.fieldData.storeInDatabase === false ||
+          this.fieldData.databaseFieldType)
       );
     },
   },
@@ -218,6 +264,8 @@ export default {
         dateFormat: null,
         fileTypes: null,
         maxFileSize: null,
+        storeInDatabase: null,
+        databaseFieldType: null,
       };
     },
     answerSelected({ fieldName, answer }) {

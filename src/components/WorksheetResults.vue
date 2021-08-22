@@ -166,6 +166,85 @@ function getBoundsRules(answers) {
   let rules = [];
 
   switch (answers.inputType) {
+    case "Numeric":
+      switch (answers.databaseFieldType) {
+        case "TINYINT":
+          rules.push(`'between:-128,127'`);
+          break;
+
+        case "TINYINT UNSIGNED":
+          rules.push(`'between:0,255'`);
+          break;
+
+        case "SMALLINT":
+          rules.push(`'between:-32768,32767'`);
+          break;
+
+        case "SMALLINT UNSIGNED":
+          rules.push(`'between:0,65535'`);
+          break;
+
+        case "MEDIUMINT":
+          rules.push(`'between:-8388608,8388607'`);
+          break;
+
+        case "MEDIUMINT UNSIGNED":
+          rules.push(`'between:0,16777215'`);
+          break;
+
+        case "INT":
+          rules.push(`'between:-2147483648,2147483647'`);
+          break;
+
+        case "INT UNSIGNED":
+          rules.push(`'between:0,4294967295'`);
+          break;
+
+        case "BIGINT":
+          rules.push(`'between:-9223372036854775808,9223372036854775807'`);
+          break;
+
+        case "BIGINT UNSIGNED":
+          rules.push(`'between:0,18446744073709551615'`);
+          break;
+
+        default:
+          break;
+      }
+      break;
+
+    case "Text":
+      switch (answers.databaseFieldType) {
+        case "CHAR":
+          rules.push(`'max:255' // change default as needed`);
+          break;
+
+        case "VARCHAR":
+          rules.push(`'max:255' // change default as needed`);
+          break;
+
+        case "TINYTEXT":
+          rules.push(`'max:256'`);
+          break;
+
+        case "TEXT":
+          rules.push(`'max:65536'`);
+          break;
+
+        case "MEDIUMTEXT":
+          rules.push(`'max:16777216'`);
+          break;
+
+        case "LONGTEXT":
+          rules.push(`'max:4294967296'`);
+          break;
+
+        default:
+          break;
+      }
+
+      break;
+
     case "Drop down":
       if (answers.dropDownSource === "PHP array") {
         rules.push(`Rule::in($array)`);
