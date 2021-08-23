@@ -1,22 +1,12 @@
-/**
- * Override some styles - we can do this better when we compile this donk
- */
-.btn, .form-control, .card {
-    border-radius: 0; /* $enable-rounded: false */
-}
-.btn-primary {
-    background-color: #0477bf; /* $primary: #0477bf; */
-}
+$enable-rounded: false;
+$font-size-root: 20px;
+$font-weight-base: 300;
+$primary: #0477bf;
+$secondary: #333333;
 
-/**
- * Shared styles
- */
-html {
-    font-size: 20px; /* $font-size-base: 1.25rem; */
-}
+@import "bootstrap/scss/bootstrap";
 
-body {
-    font-weight: 300; /* $font-weight-base: 300; */
+#app {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -32,7 +22,7 @@ header a {
 }
 
 header h1 {
-    font-size: 34px;
+    font-size: 34px; // normal h1 is base * 2.5 which would be 50, so leave this?
     display: inline-block;
     font-weight: 500;
     color: #444444;
@@ -49,7 +39,7 @@ aside {
 }
 
 footer {
-    background: #333333; /* $secondary: #333333; */
+    background: #333333; // should this be copied, or a class added to footer?
     color: #cccccc;
 }
 
@@ -70,15 +60,10 @@ footer a:hover {
     font-size: 1.7rem;
 }
 
-#updates-signup {
-    max-width: 30rem;
-    margin: auto;
-}
-
 /**
  * custom styles: start page
  */
- .start form {
+.start form {
     max-width: 25rem;
     margin: auto;
 }
@@ -93,7 +78,7 @@ footer a:hover {
 /**
  * Custom styles: main interface
  */
- .main-interface main, .main-interface .form-control, .main-interface .btn {
+ .main-interface, .main-interface .form-control, .main-interface .btn {
     font-size: 16px;
 }
 
@@ -118,4 +103,14 @@ hr {
 }
 .book-cta img {
     height: 10rem;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
