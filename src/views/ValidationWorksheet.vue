@@ -112,6 +112,13 @@
           @answer-selected="answerSelected"
         />
 
+        <div
+          v-if="fieldData.singleCheckbox === false"
+          class="alert alert-danger mt-4"
+        >
+          Array support is coming soon.
+        </div>
+
         <question-multiple-choice
           v-if="fieldData.inputType === 'Radio'"
           question="Where are the radio values coming from?"
@@ -231,8 +238,6 @@ export default {
             "MEDIUMINT UNSIGNED",
             "INT",
             "INT UNSIGNED",
-            "BIGINT",
-            "BIGINT UNSIGNED",
           ]
         : ["CHAR", "VARCHAR", "TINYTEXT", "TEXT", "MEDIUMTEXT", "LONGTEXT"];
     },

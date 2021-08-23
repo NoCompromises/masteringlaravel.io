@@ -5,8 +5,9 @@
       You're Done!
     </h4>
     <p>
-      Travel trips taken away go home. Friends are baskets and hats. Wishes are
-      hopping and trees are west. Brushing liked to tutu dark's direction.
+      Time to copy and paste this into your application. These provide a good
+      foundation, but don't forget to add more rules to fully validate your
+      data.
     </p>
     <slot></slot>
   </section>

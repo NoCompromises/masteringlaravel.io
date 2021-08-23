@@ -14,6 +14,5 @@
 <script>
 export default {
   name: "SiteFooter",
-  props: {},
 };
 </script>

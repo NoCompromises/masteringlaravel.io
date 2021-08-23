@@ -29,7 +29,11 @@ import useAnswerQuestions from "@/composables/useAnswerQuestions";
 
 export default {
   name: "QuestionMultipleChoice",
-  props: ["question", "fieldName", "choices"],
+  props: {
+    question: { type: String, required: true },
+    fieldName: { type: String, required: true },
+    choices: { type: Array, required: true },
+  },
   emits: ["answerSelected"],
   setup(props, context) {
     const { answer, setAnswer } = useAnswerQuestions(props.fieldName, context);

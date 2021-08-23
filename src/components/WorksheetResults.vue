@@ -33,12 +33,21 @@
     </div>
 
     <div v-if="showInstructions" class="row mt-3">
-      <h4>Use this? Can I? Should I? Dare I????</h4>
       <p>
-        A man once told me something that shook my mind within inches of
-        collapse. He leaned in, and with four soft-spoken words, he left a
-        permanent mark on my very being. He said...hold on, be right back. I'll
-        finish this story later, I promise.
+        Copy and paste these into the <code>rules</code> method of your
+        <a
+          href="https://laravel.com/docs/8.x/validation#form-request-validation"
+          target="_blank"
+          >FormRequest</a
+        >.
+      </p>
+      <p>
+        Import the <code>Illuminate\Validation\Rule</code> class, if necessary.
+      </p>
+      <p class="mb-0">
+        Some rules will require customization. For example, <code>in</code> or
+        <code>exists</code>
+        have placeholder variables you should set for your application.
       </p>
     </div>
   </div>
@@ -47,7 +56,7 @@
 <script>
 export default {
   name: "WorksheetResults",
-  props: ["answers"],
+  props: { answers: { type: Object, required: true } },
   computed: {
     recommendedRules() {
       return `'${this.answers.name}' => ${buildResults(this.answers)}`;
@@ -200,72 +209,30 @@ function getBoundsRules(answers) {
           rules.push(`'between:0,4294967295'`);
           break;
 
-        case "BIGINT":
-          rules.push(`'between:-9223372036854775808,9223372036854775807'`);
-          break;
-
-        case "BIGINT UNSIGNED":
-          rules.push(`'between:0,18446744073709551615'`);
-          break;
-
         default:
           break;
       }
       break;
 
     case "Text":
-      switch (answers.databaseFieldType) {
-        case "CHAR":
-          rules.push(`'max:255' // change default as needed`);
-          break;
-
-        case "VARCHAR":
-          rules.push(`'max:255' // change default as needed`);
-          break;
-
-        case "TINYTEXT":
-          rules.push(`'max:256'`);
-          break;
-
-        case "TEXT":
-          rules.push(`'max:65536'`);
-          break;
-
-        case "MEDIUMTEXT":
-          rules.push(`'max:16777216'`);
-          break;
-
-        case "LONGTEXT":
-          rules.push(`'max:4294967296'`);
-          break;
-
-        default:
-          break;
-      }
+      getTextDatabaseBounds(rules, answers.databaseFieldType);
 
       break;
 
     case "Drop down":
-      if (answers.dropDownSource === "PHP array") {
-        rules.push(`Rule::in($array)`);
-      } else if (answers.dropDownSource === "Database") {
-        rules.push(`Rule::exists($table, $column)`);
-      }
-
+      getTextDatabaseBounds(rules, answers.databaseFieldType);
+      getSourceBounds(rules, answers.dropDownSource);
       break;
 
     case "Radio":
-      if (answers.radioSource === "PHP array") {
-        rules.push(`Rule::in($array)`);
-      } else if (answers.radioSource === "Database") {
-        rules.push(`Rule::exists($table, $column)`);
-      }
+      getTextDatabaseBounds(rules, answers.databaseFieldType);
+      getSourceBounds(rules, answers.radioSource);
 
       break;
 
     case "File":
       if (answers.fileTypes) {
-        rules.push(`'mime_types:list,png,pdf,etc'`);
+        rules.push(`'mime_types:png,pdf,etc'`);
       }
 
       switch (answers.maxFileSize) {
@@ -295,5 +262,44 @@ function getBoundsRules(answers) {
 
 function getCustomRules() {
   return [];
+}
+
+function getSourceBounds(rules, valueSource) {
+  if (valueSource === "PHP array") {
+    rules.push(`Rule::in($array)`);
+  } else if (valueSource === "Database") {
+    rules.push(`Rule::exists($table, $column)`);
+  }
+}
+
+function getTextDatabaseBounds(rules, databaseFieldType) {
+  switch (databaseFieldType) {
+    case "CHAR":
+      rules.push(`'max:255' // change default as needed`);
+      break;
+
+    case "VARCHAR":
+      rules.push(`'max:255' // change default as needed`);
+      break;
+
+    case "TINYTEXT":
+      rules.push(`'max:256'`);
+      break;
+
+    case "TEXT":
+      rules.push(`'max:65536'`);
+      break;
+
+    case "MEDIUMTEXT":
+      rules.push(`'max:16777216'`);
+      break;
+
+    case "LONGTEXT":
+      rules.push(`'max:4294967296'`);
+      break;
+
+    default:
+      break;
+  }
 }
 </script>

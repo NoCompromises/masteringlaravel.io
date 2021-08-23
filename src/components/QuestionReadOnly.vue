@@ -12,6 +12,9 @@
 <script>
 export default {
   name: "QuestionReadOnly",
-  props: ["question", "answer"],
+  props: {
+    question: { type: String, required: true },
+    answer: { type: String, required: true },
+  },
 };
 </script>

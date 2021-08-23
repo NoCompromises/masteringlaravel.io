@@ -3,7 +3,9 @@
     <div class="container pt-3 mb-5">
       <div class="row">
         <div class="col-12 col-md-10 text-center text-sm-start">
-          <img src="../assets/logo.svg" alt="No Compromises Logo" />
+          <router-link to="/">
+            <img src="../assets/logo.svg" alt="No Compromises Logo" />
+          </router-link>
           <h1>Laravel Validation Builder</h1>
         </div>
         <div class="col-12 col-md-2 mt-3 mt-sm-0">
@@ -19,6 +21,5 @@
 <script>
 export default {
   name: "SiteHeader",
-  props: {},
 };
 </script>

@@ -31,7 +31,10 @@ import useAnswerQuestions from "@/composables/useAnswerQuestions";
 
 export default {
   name: "QuestionYesNo",
-  props: ["question", "fieldName"],
+  props: {
+    question: { type: String, required: true },
+    fieldName: { type: String, required: true },
+  },
   emits: ["answerSelected"],
   setup(props, context) {
     const { answer, setAnswer } = useAnswerQuestions(props.fieldName, context);
