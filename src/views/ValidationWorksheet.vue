@@ -6,7 +6,7 @@
       <p id="question">
         We have to ask you a few questions to build your validation rules:
       </p>
-      <form class="mt-3 mt-md-5" @submit.prevent="showStartingPoint = false">
+      <form class="mt-3 mt-md-5" @submit.prevent="showWorksheet">
         <div class="row">
           <div class="col-12">
             <label for="fieldName" class="form-label">
@@ -181,6 +181,7 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 import SiteHeader from "@/components/SiteHeader.vue";
 import SiteFooter from "@/components/SiteFooter.vue";
 import QuestionReadOnly from "@/components/QuestionReadOnly.vue";
@@ -204,7 +205,6 @@ export default {
   },
   data() {
     return {
-      showStartingPoint: true,
       fieldData: this.getInitialFieldData(),
     };
   },
@@ -249,10 +249,11 @@ export default {
           this.fieldData.databaseFieldType)
       );
     },
+    ...mapState(["showStartingPoint"]),
   },
   methods: {
     resetForm() {
-      this.showStartingPoint = true;
+      this.hideWorksheet();
       this.fieldData = this.getInitialFieldData();
     },
     getInitialFieldData() {
@@ -277,6 +278,7 @@ export default {
       this.fieldData[fieldName] = answer;
       this.$nextTick(() => window.scrollTo(0, document.body.scrollHeight));
     },
+    ...mapActions(["hideWorksheet", "showWorksheet"]),
   },
 };
 </script>

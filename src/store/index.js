@@ -2,7 +2,21 @@ import { createStore } from "vuex";
 
 export default createStore({
   state() {
-    return {};
+    return {
+      showStartingPoint: true,
+    };
   },
-  mutations: {},
+  mutations: {
+    setShowStartingPoint(state, payload) {
+      state.showStartingPoint = payload.value;
+    },
+  },
+  actions: {
+    hideWorksheet(context) {
+      context.commit("setShowStartingPoint", { value: true });
+    },
+    showWorksheet(context) {
+      context.commit("setShowStartingPoint", { value: false });
+    },
+  },
 });
