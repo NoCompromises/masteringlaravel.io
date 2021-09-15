@@ -1,15 +1,21 @@
 <template>
-  <section v-if="answer === null" class="mt-4 card bg-light">
+  <section v-if="fieldData[fieldName] === null" class="mt-4 card bg-light">
     <div class="card-body">
       <h6>{{ question }}</h6>
       <div class="row">
         <div class="col-6">
-          <button @click="setAnswer(true)" class="btn btn-success btn-sm">
+          <button
+            @click="updateFieldData({ fieldName, value: true })"
+            class="btn btn-success btn-sm"
+          >
             Yes
           </button>
         </div>
         <div class="col-6 text-end">
-          <button @click="setAnswer(false)" class="btn btn-danger btn-sm">
+          <button
+            @click="updateFieldData({ fieldName, value: false })"
+            class="btn btn-danger btn-sm"
+          >
             No
           </button>
         </div>
@@ -20,7 +26,7 @@
     <div class="card-body">
       <h6>{{ question }}</h6>
       <div>
-        <code>{{ answer ? "Yes" : "No" }}</code>
+        <code>{{ fieldData[fieldName] ? "Yes" : "No" }}</code>
       </div>
     </div>
   </section>
@@ -35,13 +41,12 @@ export default {
     question: { type: String, required: true },
     fieldName: { type: String, required: true },
   },
-  emits: ["answerSelected"],
-  setup(props, context) {
-    const { answer, setAnswer } = useAnswerQuestions(props.fieldName, context);
+  setup() {
+    const { fieldData, updateFieldData } = useAnswerQuestions();
 
     return {
-      answer,
-      setAnswer,
+      fieldData,
+      updateFieldData,
     };
   },
 };

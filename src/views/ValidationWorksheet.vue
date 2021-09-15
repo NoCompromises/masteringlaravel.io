@@ -18,7 +18,7 @@
           <div class="col-12 col-sm-9 mb-3 mb-sm-0">
             <input
               type="text"
-              v-model="fieldData.name"
+              v-model="name"
               class="form-control"
               id="fieldName"
               required
@@ -46,25 +46,18 @@
 
         <question-read-only
           question="What is the name of your field?"
-          :answer="fieldData.name"
+          field-name="name"
         />
 
         <question-yes-no
           question="Is the field required to be present in the request?"
           field-name="required"
-          @answer-selected="
-            answerSelected($event);
-            if ($event.answer === false) {
-              fieldData.allowEmpty = true;
-            }
-          "
         />
 
         <question-yes-no
           v-if="fieldData.required"
           question="Is it okay for the field to be empty though?"
           field-name="allowEmpty"
-          @answer-selected="answerSelected"
         />
 
         <question-multiple-choice
@@ -80,21 +73,18 @@
             'Date',
             'File',
           ]"
-          @answer-selected="answerSelected"
         />
 
         <question-yes-no
           v-if="fieldData.inputType === 'Numeric'"
           question="Do you want to restrict input to integers?"
           field-name="onlyIntegers"
-          @answer-selected="answerSelected"
         />
 
         <question-yes-no
           v-if="fieldData.inputType === 'Text'"
           question="Is this an email input?"
           field-name="email"
-          @answer-selected="answerSelected"
         />
 
         <question-multiple-choice
@@ -102,14 +92,12 @@
           question="Where are the drop down values coming from?"
           field-name="dropDownSource"
           :choices="['PHP array', 'Database']"
-          @answer-selected="answerSelected"
         />
 
         <question-yes-no
           v-if="fieldData.inputType === 'Checkbox'"
           question="Is it a single checkbox?"
           field-name="singleCheckbox"
-          @answer-selected="answerSelected"
         />
 
         <div
@@ -124,21 +112,18 @@
           question="Where are the radio values coming from?"
           field-name="radioSource"
           :choices="['PHP array', 'Database']"
-          @answer-selected="answerSelected"
         />
 
         <question-yes-no
           v-if="fieldData.inputType === 'Date'"
           question="Do you care about the date format?"
           field-name="dateFormat"
-          @answer-selected="answerSelected"
         />
 
         <question-yes-no
           v-if="fieldData.inputType === 'File'"
           question="Do you want to restrict file types?"
           field-name="fileTypes"
-          @answer-selected="answerSelected"
         />
 
         <question-multiple-choice
@@ -146,14 +131,12 @@
           question="What is the maximum size?"
           field-name="maxFileSize"
           :choices="['1 MB', '5 MB', '10 MB', '20 MB']"
-          @answer-selected="answerSelected"
         />
 
         <question-yes-no
           v-if="needDatabaseInfo"
           question="Will this be data be stored in a database?"
           field-name="storeInDatabase"
-          @answer-selected="answerSelected"
         />
 
         <question-multiple-choice
@@ -161,7 +144,6 @@
           question="What type of database field are you using?"
           field-name="databaseFieldType"
           :choices="databaseFieldChoices"
-          @answer-selected="answerSelected"
         />
 
         <worksheet-complete v-if="worksheetComplete">
@@ -204,11 +186,17 @@ export default {
     BookInfo,
   },
   data() {
-    return {
-      fieldData: this.getInitialFieldData(),
-    };
+    return {};
   },
   computed: {
+    name: {
+      get() {
+        return this.$store.state.fieldData.name;
+      },
+      set(value) {
+        this.updateFieldData({ fieldName: "name", value });
+      },
+    },
     fileInputComplete() {
       return (
         this.fieldData.onlyIntegers !== null ||
@@ -249,36 +237,15 @@ export default {
           this.fieldData.databaseFieldType)
       );
     },
-    ...mapState(["showStartingPoint"]),
+    ...mapState(["showStartingPoint", "fieldData"]),
   },
   methods: {
-    resetForm() {
-      this.hideWorksheet();
-      this.fieldData = this.getInitialFieldData();
-    },
-    getInitialFieldData() {
-      return {
-        name: "",
-        required: null,
-        allowEmpty: null,
-        inputType: null,
-        onlyIntegers: null,
-        email: null,
-        dropDownSource: null,
-        singleCheckbox: null,
-        radioSource: null,
-        dateFormat: null,
-        fileTypes: null,
-        maxFileSize: null,
-        storeInDatabase: null,
-        databaseFieldType: null,
-      };
-    },
-    answerSelected({ fieldName, answer }) {
-      this.fieldData[fieldName] = answer;
-      this.$nextTick(() => window.scrollTo(0, document.body.scrollHeight));
-    },
-    ...mapActions(["hideWorksheet", "showWorksheet"]),
+    ...mapActions([
+      "hideWorksheet",
+      "showWorksheet",
+      "resetForm",
+      "updateFieldData",
+    ]),
   },
 };
 </script>
