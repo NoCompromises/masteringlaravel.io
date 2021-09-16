@@ -1,9 +1,12 @@
 import { createStore } from "vuex";
+import { trackHistory, clearHistory } from "./history";
 
 export default createStore({
+  plugins: [trackHistory],
   state() {
     return {
       showStartingPoint: true,
+      lastAnsweredQuestion: null,
       fieldData: getInitialFieldData(),
     };
   },
@@ -13,6 +16,9 @@ export default createStore({
     },
     setShowStartingPoint(state, payload) {
       state.showStartingPoint = payload.value;
+    },
+    setLastAnsweredQuestion(state, payload) {
+      state.lastAnsweredQuestion = payload.value;
     },
     setFieldData(state, payload) {
       state.fieldData[payload.fieldName] = payload.value;
@@ -27,7 +33,9 @@ export default createStore({
     },
     resetForm(context) {
       context.commit("setShowStartingPoint", { value: true });
+      context.commit("setLastAnsweredQuestion", { value: null });
       context.commit("initializeForm");
+      clearHistory();
     },
     updateFieldData(context, payload) {
       context.commit("setFieldData", payload);
@@ -38,6 +46,8 @@ export default createStore({
           value: true,
         });
       }
+
+      context.commit("setLastAnsweredQuestion", { value: payload.fieldName });
     },
   },
   strict: process.env.NODE_ENV !== "production",
