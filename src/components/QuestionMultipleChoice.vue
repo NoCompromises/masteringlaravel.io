@@ -1,12 +1,12 @@
 <template>
-  <section v-if="answer === null" class="mt-4 card bg-light">
+  <section v-if="fieldData[fieldName] === null" class="mt-4 card bg-light">
     <div class="card-body">
       <h6>{{ question }}</h6>
       <div>
         <button
           v-for="choice in choices"
           :key="choice"
-          @click="setAnswer(choice)"
+          @click="updateFieldData({ fieldName, value: choice })"
           class="btn btn-secondary btn-sm me-1 mb-1"
         >
           {{ choice }}
@@ -18,29 +18,33 @@
     <div class="card-body">
       <h6>{{ question }}</h6>
       <div>
-        <code>{{ answer }}</code>
+        <code>{{ fieldData[fieldName] }}</code>
       </div>
     </div>
+    <question-undo :field-name="fieldName" />
   </section>
 </template>
 
 <script>
 import useAnswerQuestions from "@/composables/useAnswerQuestions";
+import QuestionUndo from "@/components/QuestionUndo.vue";
 
 export default {
   name: "QuestionMultipleChoice",
+  components: {
+    QuestionUndo,
+  },
   props: {
     question: { type: String, required: true },
     fieldName: { type: String, required: true },
     choices: { type: Array, required: true },
   },
-  emits: ["answerSelected"],
-  setup(props, context) {
-    const { answer, setAnswer } = useAnswerQuestions(props.fieldName, context);
+  setup() {
+    const { fieldData, updateFieldData } = useAnswerQuestions();
 
     return {
-      answer,
-      setAnswer,
+      fieldData,
+      updateFieldData,
     };
   },
 };

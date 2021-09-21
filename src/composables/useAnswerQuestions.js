@@ -1,18 +1,18 @@
-import { ref } from "vue";
+import { computed, nextTick } from "vue";
+import { useStore } from "vuex";
+import { rewindHistory } from "../store/history";
 
-export default function useAnswerQuestions(fieldName, context) {
-  let answer = ref(null);
-
-  const setAnswer = (value) => {
-    answer.value = value;
-    context.emit("answerSelected", {
-      fieldName,
-      answer: value,
-    });
-  };
+export default function useAnswerQuestions() {
+  const store = useStore();
 
   return {
-    answer,
-    setAnswer,
+    fieldData: computed(() => store.state.fieldData),
+    updateFieldData: (payload) => {
+      store.dispatch("updateFieldData", payload);
+      nextTick(() => window.scrollTo(0, document.body.scrollHeight));
+    },
+    undoAnswer: () => {
+      rewindHistory(store);
+    },
   };
 }
