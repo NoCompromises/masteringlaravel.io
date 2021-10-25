@@ -1,6 +1,4 @@
 <template>
-  <site-header />
-
   <main class="container main-interface" :class="{ start: showStartingPoint }">
     <section class="mb-3" v-if="showStartingPoint">
       <p id="question">
@@ -158,14 +156,10 @@
       </div>
     </div>
   </main>
-
-  <site-footer />
 </template>
 
 <script>
 import { mapState, mapActions } from "vuex";
-import SiteHeader from "@/components/SiteHeader.vue";
-import SiteFooter from "@/components/SiteFooter.vue";
 import QuestionReadOnly from "@/components/QuestionReadOnly.vue";
 import QuestionMultipleChoice from "@/components/QuestionMultipleChoice.vue";
 import QuestionYesNo from "@/components/QuestionYesNo.vue";
@@ -176,8 +170,6 @@ import BookInfo from "@/components/BookInfo.vue";
 export default {
   name: "ValidationWorksheet",
   components: {
-    SiteHeader,
-    SiteFooter,
     QuestionReadOnly,
     QuestionMultipleChoice,
     QuestionYesNo,
