@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import ValidationHome from "../views/ValidationHome.vue";
 import ValidationWorksheet from "../views/ValidationWorksheet.vue";
+// import ValidationBook from "../views/ValidationBook.vue";
 import NotFound from "../views/NotFound.vue";
 
 const routes = [
@@ -14,6 +15,11 @@ const routes = [
     name: "ValidationWorksheet",
     component: ValidationWorksheet,
   },
+  // {
+  //   path: "/laravel-validation-book",
+  //   name: "ValidationBook",
+  //   component: ValidationBook,
+  // },
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
