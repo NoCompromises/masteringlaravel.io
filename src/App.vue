@@ -2,14 +2,17 @@
   <header>
     <div class="container pt-3 mb-5">
       <div class="row">
-        <div class="col-12 col-md-10 text-center text-sm-start">
-          <router-link to="/">
+        <div class="col-12 col-md-7 text-center text-md-start">
+          <router-link :to="{ name: 'ValidationHome' }">
             <img src="./assets/logo.svg" alt="No Compromises Logo" />
+            <h1>Mastering Laravel</h1>
           </router-link>
-          <h1>Mastering Laravel</h1>
         </div>
-        <div class="col-12 col-md-2 mt-3 mt-sm-0">
-          <nav class="text-center text-md-end pt-0 pt-md-2">
+        <div class="col-12 col-md-5 mt-3 mt-md-0">
+          <nav class="text-center text-md-end pt-0 pt-md-3">
+            <router-link :to="{ name: 'ValidationBook' }" class="me-3"
+              >Validation Book</router-link
+            >
             <a href="https://nocompromises.io?ref=worksheet">Contact Us</a>
           </nav>
         </div>
