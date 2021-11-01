@@ -271,6 +271,11 @@
 <script>
 export default {
   name: "ValidationHome",
+  mounted() {
+    let gumroad = document.createElement("script");
+    gumroad.setAttribute("src", "https://gumroad.com/js/gumroad.js");
+    document.body.appendChild(gumroad);
+  },
 };
 </script>
 
