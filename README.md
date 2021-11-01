@@ -1,12 +1,8 @@
-# Laravel Validation Worksheet
+# Mastering Laravel
 
-It's that thing that Joel wants... no... NEEDS ... in his life.
+The [masteringlaravel.io](https://masteringlaravel.io) website - in all it's glory.
 
 ## Technical
-
-### Folder Structure
-
-* `mocks/` - the mockup HTML for pages
 
 ## Project setup
 ```
