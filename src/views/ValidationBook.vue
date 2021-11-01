@@ -10,7 +10,11 @@
               hands-on exercises, and a dash of fun.
             </p>
             <div class="d-grid d-md-block">
-              <a href="#" class="btn btn-primary rounded">Buy the book</a>
+              <a
+                href="https://gum.co/laravel-validation?wanted=true"
+                class="btn btn-primary rounded"
+                >Buy the book</a
+              >
             </div>
             <p class="small mt-4">
               <strong>Over 200 pages</strong> and
@@ -142,6 +146,125 @@
         </div>
       </div>
     </section>
+
+    <section class="testimonial py-5">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12 col-lg-10 offset-lg-1 col-xl-6 offset-xl-3">
+            <q class="d-block mb-4"
+              >This will be the de facto reference for Laravel validation rules.
+              Open it, find your rule, reference the examples, done.</q
+            >
+            <cite>
+              <img src="../assets/jmac.jpg" alt="jmac" class="rounded-circle" />
+              <strong>Jason McCreary</strong>
+              <span class="sep"> / </span> Laravel Shift</cite
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container rounded text-center bg-buy py-5 my-0 my-md-5">
+        <div class="row">
+          <div class="col-12 col-lg-8 offset-lg-2">
+            <h2 class="text-white">Level up your skills!</h2>
+            <p class="text-white">
+              If you put in the work, we're absolutely convinced these skills
+              will have a real impact in your day-to-day work. We offer an
+              unconditional money back guarantee.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div
+            class="col-12 col-md-6 offset-md-3 col-lg-4 offset-lg-4 text-center"
+          >
+            <div class="d-grid my-3">
+              <a
+                href="https://gum.co/laravel-validation?wanted=true"
+                class="btn btn-primary rounded"
+                >Buy the book!</a
+              >
+            </div>
+            <p class="text-dark mb-0">
+              <small>Over 200 pages and 10 exercises</small>
+            </p>
+            <p class="text-white mb-0">only <strong>$34.99</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial py-5">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12 col-lg-10 offset-lg-1 col-xl-6 offset-xl-3">
+            <q class="d-block mb-4"
+              >This will be the de facto reference for Laravel validation rules.
+              Open it, find your rule, reference the examples, done.</q
+            >
+            <cite>
+              <img
+                src="../assets/jgil.jpg"
+                alt="Mr Gilmore"
+                class="rounded-circle"
+              />
+              <strong>Jason Gilmore</strong>
+              <span class="sep"> / </span> Author "Easy Laravel" &amp; CTO,
+              DreamFactory Software</cite
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 authors">
+      <div class="container">
+        <h2>Who wrote this book?</h2>
+        <div class="row">
+          <div class="col-12 col-lg-6">
+            <div class="d-block d-sm-flex">
+              <div class="flex-shrink-0 mt-2 mb-2 mb-sm-0 text-center">
+                <img
+                  src="../assets/joel.jpg"
+                  alt="Cole Jermont"
+                  class="rounded"
+                />
+              </div>
+              <div class="flex-grow-1 ms-0 ms-sm-3">
+                <h3>Joel Clermont</h3>
+                <p>
+                  Having experience in multiple disciplines and languages, Joel
+                  has become efficient at learning new technologies. He excels
+                  at being gassy and helping others learn more effectively too.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="d-block d-sm-flex">
+              <div class="flex-shrink-0 mt-2 mb-2 mb-sm-0 text-center">
+                <img
+                  src="../assets/aaron.jpeg"
+                  alt="Aaron Saray, Duke of New Berlin"
+                  class="rounded"
+                />
+              </div>
+              <div class="flex-grow-1 ms-0 ms-sm-3">
+                <h3>Aaron Saray</h3>
+                <p>
+                  With a career spanning public companies, startups, and
+                  contracting work, Aaron has worked on projects of all sizes.
+                  These days, he focuses on Laravel and PHP security.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -179,6 +302,10 @@ strong {
 .btn-primary {
   color: white;
   background-color: #059669;
+
+  &:hover {
+    background-color: #047857;
+  }
 }
 .text-secondary {
   color: #ff0000 !important;
@@ -188,6 +315,45 @@ strong {
 
   img {
     max-height: 20rem;
+  }
+}
+
+.testimonial {
+  background-color: #f1f1f1;
+
+  q {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  cite {
+    font-style: normal;
+    font-size: 0.9rem;
+  }
+  .sep {
+    padding: 0 0.3rem;
+    font-weight: 700;
+    color: #0000ff;
+  }
+  img {
+    height: 2rem;
+    margin-right: 0.7rem;
+  }
+}
+.bg-buy {
+  background-color: #059669;
+
+  .btn-primary {
+    border-color: #111826;
+    background-color: #111826;
+    &:hover {
+      background-color: #000000;
+    }
+  }
+}
+
+.authors {
+  img {
+    max-height: 150px;
   }
 }
 </style>
