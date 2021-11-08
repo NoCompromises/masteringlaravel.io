@@ -229,7 +229,7 @@
               <div class="flex-shrink-0 mt-2 mb-2 mb-sm-0 text-center">
                 <img
                   src="../assets/joel.jpg"
-                  alt="Cole Jermont"
+                  alt="Joel Clermont"
                   class="rounded"
                 />
               </div>
@@ -238,7 +238,7 @@
                 <p>
                   Having experience in multiple disciplines and languages, Joel
                   has become efficient at learning new technologies. He excels
-                  at being gassy and helping others learn more effectively too.
+                  at helping others learn more effectively too.
                 </p>
               </div>
             </div>
