@@ -3,12 +3,9 @@
     <hr class="d-none d-lg-block" />
     <div class="d-flex align-items-center book-cta mt-4">
       <div class="flex-shrink-0">
-        <a
-          href="https://nocompromises.io/laravel-validation-book/?ref=worksheet"
-          target="_blank"
-        >
+        <router-link :to="{ name: 'ValidationBook' }">
           <img src="../assets/validation-book-cover.jpg" alt="Book Cover" />
-        </a>
+        </router-link>
       </div>
       <div class="flex-grow-1 ms-3">
         <h6>Want to Master Validation Rules?</h6>
@@ -16,12 +13,9 @@
           We've written the book on it! Let us teach you everything we know
           about validation rules.
         </p>
-        <a
-          href="https://nocompromises.io/laravel-validation-book/?ref=worksheet"
-          target="_blank"
-          class="btn btn-primary"
-          >Check out the Book</a
-        >
+        <router-link :to="{ name: 'ValidationBook' }" class="btn btn-primary">
+          Check out the Book
+        </router-link>
       </div>
     </div>
   </div>
