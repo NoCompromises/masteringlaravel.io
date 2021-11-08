@@ -1,6 +1,4 @@
 <template>
-  <site-header />
-
   <main>
     <section class="mb-5">
       <div class="container">
@@ -37,21 +35,15 @@
       <email-sign-up />
     </section>
   </main>
-
-  <site-footer />
 </template>
 
 <script>
-import SiteHeader from "@/components/SiteHeader.vue";
 import EmailSignUp from "@/components/EmailSignUp.vue";
-import SiteFooter from "@/components/SiteFooter.vue";
 
 export default {
   name: "ValidationHome",
   components: {
-    SiteHeader,
     EmailSignUp,
-    SiteFooter,
   },
 };
 </script>
