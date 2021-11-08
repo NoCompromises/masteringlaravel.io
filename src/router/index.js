@@ -15,6 +15,9 @@ const routes = [
     path: "/worksheet",
     name: "ValidationWorksheet",
     component: ValidationWorksheet,
+    meta: {
+      title: "Laravel Validation Worksheet",
+    },
   },
   {
     path: "/laravel-validation-book",
@@ -34,6 +37,9 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  scrollBehavior() {
+    return { top: 0 };
+  },
 });
 
 const defaultTitle = "Mastering Laravel";
