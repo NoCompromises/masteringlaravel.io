@@ -6,7 +6,7 @@
           <div class="col-12 col-md-6 mb-5 mb-md-0">
             <div class="card h-100">
               <div class="card-body d-flex flex-column">
-                <h2 class="card-title text-center">Short useful tips</h2>
+                <h2 class="card-title text-center">Make your app better</h2>
                 <p>
                   We've assembled a collection of short useful tips that will
                   make your Laravel application a little bit better.
@@ -33,7 +33,9 @@
           <div class="col-12 col-md-6">
             <div class="card h-100">
               <div class="card-body d-flex flex-column">
-                <h2 class="card-title text-center">Validation rules</h2>
+                <h2 class="card-title text-center">
+                  Use the right validation rules
+                </h2>
                 <p>
                   Validation is a deep topic, but it's important to get it
                   right.
