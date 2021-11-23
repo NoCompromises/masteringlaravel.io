@@ -60,11 +60,20 @@
         </div>
       </div>
     </section>
+
+    <section class="pt-4 py-5 px-2 bg-light border-top">
+      <email-sign-up />
+    </section>
   </main>
 </template>
 
 <script>
+import EmailSignUp from "@/components/EmailSignUp.vue";
+
 export default {
   name: "Home",
+  components: {
+    EmailSignUp,
+  },
 };
 </script>
