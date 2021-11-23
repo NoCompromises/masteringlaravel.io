@@ -55,7 +55,6 @@
 
 <script>
 export default {
-  name: "WorksheetResults",
   props: { answers: { type: Object, required: true } },
   computed: {
     recommendedRules() {

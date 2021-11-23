@@ -12,9 +12,3 @@
     <slot></slot>
   </section>
 </template>
-
-<script>
-export default {
-  name: "WorksheetComplete",
-};
-</script>

@@ -15,7 +15,6 @@ import { mapState } from "vuex";
 import QuestionUndo from "@/components/QuestionUndo.vue";
 
 export default {
-  name: "QuestionReadOnly",
   components: {
     QuestionUndo,
   },

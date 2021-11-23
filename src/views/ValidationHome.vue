@@ -34,6 +34,41 @@
     <section class="pt-4 py-5 px-2 bg-light border-top">
       <email-sign-up />
     </section>
+    <section class="my-5">
+      <div class="container">
+        <div class="row hero">
+          <div class="col-12 col-md-6">
+            <h2 class="mb-4">Master Laravel validation rules</h2>
+            <p>
+              Do you feel like you're just scratching the surface of what you
+              can do with Laravel validation rules? Dive deep with this book and
+              gain confidence as you improve your skills.
+            </p>
+            <p>
+              In addition to reading about how to write better rules, we help
+              you practice what you're learning with a set of real-world
+              exercises.
+            </p>
+            <div class="text-center mt-4">
+              <router-link
+                :to="{ name: 'ValidationBook' }"
+                class="btn btn-primary"
+              >
+                Learn More
+                <i class="bi bi-caret-right-fill"></i>
+              </router-link>
+            </div>
+          </div>
+          <div class="col-12 col-md-5 offset-md-1 text-center mb-5 mb-md-0">
+            <img
+              src="../assets/book-cover-shot.png"
+              alt="Book cover for Mastering Laravel Validation Rules"
+              class="img-fluid img-thumbnail"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
@@ -41,7 +76,6 @@
 import EmailSignUp from "@/components/EmailSignUp.vue";
 
 export default {
-  name: "ValidationHome",
   components: {
     EmailSignUp,
   },

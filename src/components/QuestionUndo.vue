@@ -11,7 +11,6 @@ import useAnswerQuestions from "@/composables/useAnswerQuestions";
 import { mapState } from "vuex";
 
 export default {
-  name: "QuestionUndo",
   props: {
     fieldName: { type: String, required: true },
   },

@@ -1,5 +1,6 @@
 import { nextTick } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
+import HomePage from "../views/HomePage.vue";
 import ValidationHome from "../views/ValidationHome.vue";
 import ValidationWorksheet from "../views/ValidationWorksheet.vue";
 import ValidationBook from "../views/ValidationBook.vue";
@@ -8,6 +9,11 @@ import NotFound from "../views/NotFound.vue";
 const routes = [
   {
     path: "/",
+    name: "Home",
+    component: HomePage,
+  },
+  {
+    path: "/validation",
     name: "ValidationHome",
     component: ValidationHome,
   },
