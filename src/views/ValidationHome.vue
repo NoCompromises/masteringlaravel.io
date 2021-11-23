@@ -76,7 +76,6 @@
 import EmailSignUp from "@/components/EmailSignUp.vue";
 
 export default {
-  name: "ValidationHome",
   components: {
     EmailSignUp,
   },

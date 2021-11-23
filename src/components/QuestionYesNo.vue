@@ -38,7 +38,6 @@ import useAnswerQuestions from "@/composables/useAnswerQuestions";
 import QuestionUndo from "@/components/QuestionUndo.vue";
 
 export default {
-  name: "QuestionYesNo",
   components: {
     QuestionUndo,
   },

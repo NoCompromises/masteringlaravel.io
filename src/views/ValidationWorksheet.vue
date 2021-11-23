@@ -168,7 +168,6 @@ import WorksheetResults from "@/components/WorksheetResults.vue";
 import BookInfo from "@/components/BookInfo.vue";
 
 export default {
-  name: "ValidationWorksheet",
   components: {
     QuestionReadOnly,
     QuestionMultipleChoice,
