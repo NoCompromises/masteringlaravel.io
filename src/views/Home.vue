@@ -3,7 +3,7 @@
     <section class="mb-5">
       <div class="container">
         <div class="row hero">
-          <div class="col-12 col-md-5 mb-5 mb-md-0">
+          <div class="col-12 col-md-6 mb-5 mb-md-0">
             <div class="card h-100">
               <div class="card-body d-flex flex-column">
                 <h2 class="card-title text-center">Short useful tips</h2>
@@ -30,7 +30,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-6 offset-md-1">
+          <div class="col-12 col-md-6">
             <div class="card h-100">
               <div class="card-body d-flex flex-column">
                 <h2 class="card-title text-center">Validation rules</h2>
