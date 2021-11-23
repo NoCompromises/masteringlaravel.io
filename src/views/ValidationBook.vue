@@ -32,7 +32,29 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
+    <section class="testimonial py-5">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12 col-lg-10 offset-lg-1 col-xl-6 offset-xl-3">
+            <q class="d-block mb-4"
+              >This will be the de facto reference for Laravel validation rules.
+              Open it, find your rule, reference the examples, done.</q
+            >
+            <cite>
+              <img src="../assets/jmac.jpg" alt="jmac" class="rounded-circle" />
+              <strong>Jason McCreary</strong>
+              <span class="sep"> / </span> Laravel Shift</cite
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <div class="container">
         <div class="row mt-5">
           <div
             class="col-12 col-md-5 pt-0 pt-md-2 mb-4 mb-md-0 image-container"
@@ -156,16 +178,21 @@
               Open it, find your rule, reference the examples, done.</q
             >
             <cite>
-              <img src="../assets/jmac.jpg" alt="jmac" class="rounded-circle" />
-              <strong>Jason McCreary</strong>
-              <span class="sep"> / </span> Laravel Shift</cite
+              <img
+                src="../assets/jgil.jpg"
+                alt="Mr Gilmore"
+                class="rounded-circle"
+              />
+              <strong>Jason Gilmore</strong>
+              <span class="sep"> / </span> Author "Easy Laravel" &amp; CTO,
+              DreamFactory Software</cite
             >
           </div>
         </div>
       </div>
     </section>
 
-    <section class="py-5">
+    <section class="mb-5">
       <div class="container rounded text-center bg-buy py-5 my-0 my-md-5">
         <div class="row">
           <div class="col-12 col-lg-8 offset-lg-2">
@@ -192,29 +219,6 @@
               <small>Over 200 pages and 10 exercises</small>
             </p>
             <p class="text-white mb-0">only <strong>$34.99</strong></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonial py-5">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-12 col-lg-10 offset-lg-1 col-xl-6 offset-xl-3">
-            <q class="d-block mb-4"
-              >This will be the de facto reference for Laravel validation rules.
-              Open it, find your rule, reference the examples, done.</q
-            >
-            <cite>
-              <img
-                src="../assets/jgil.jpg"
-                alt="Mr Gilmore"
-                class="rounded-circle"
-              />
-              <strong>Jason Gilmore</strong>
-              <span class="sep"> / </span> Author "Easy Laravel" &amp; CTO,
-              DreamFactory Software</cite
-            >
           </div>
         </div>
       </div>
