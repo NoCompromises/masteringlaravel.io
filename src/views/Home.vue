@@ -21,8 +21,10 @@
                     class="btn btn-primary"
                     target="_blank"
                   >
-                    Get your FREE Laravel tips book
-                    <i class="bi bi-caret-right-fill"></i>
+                    Get your FREE Laravel tips
+                    <span class="text-nowrap"
+                      >book<i class="bi bi-caret-right-fill"></i
+                    ></span>
                   </a>
                 </div>
               </div>
