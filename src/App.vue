@@ -2,18 +2,30 @@
   <header>
     <div class="container pt-3 mb-5">
       <div class="row">
-        <div class="col-12 col-md-7 text-center text-md-start">
+        <div class="col-12 col-lg-5 text-center text-md-start">
           <router-link :to="{ name: 'Home' }">
             <img src="./assets/logo.svg" alt="No Compromises Logo" />
             <h1>Mastering Laravel</h1>
           </router-link>
         </div>
-        <div class="col-12 col-md-5 mt-3 mt-md-0">
-          <nav class="text-center text-md-end pt-0 pt-md-3">
+        <div class="col-12 col-lg-7 mt-3 mt-md-0">
+          <nav class="text-center text-lg-end pt-0 pt-md-3">
+            <a
+              href="https://nocompromises.gumroad.com/l/little-laravel"
+              target="_blank"
+              class="me-3"
+              >Tips</a
+            >
+            <router-link :to="{ name: 'ValidationWorksheet' }" class="me-sm-3"
+              >Validation Worksheet</router-link
+            >
+            <br class="d-sm-none" />
             <router-link :to="{ name: 'ValidationBook' }" class="me-3"
               >Validation Book</router-link
             >
-            <a href="https://nocompromises.io?ref=worksheet">Contact Us</a>
+            <a href="https://nocompromises.io?ref=ml" target="_blank"
+              >Contact Us</a
+            >
           </nav>
         </div>
       </div>
