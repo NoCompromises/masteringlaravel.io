@@ -38,7 +38,12 @@
     <div class="container">
       <section class="row">
         <div class="col-md mb-4 mb-md-0">
-          <h6>Brought to you by:</h6>
+          <h6>
+            Brought to you by
+            <a href="https://nocompromises.io?ref=ml" target="_blank"
+              >No Compromises</a
+            >:
+          </h6>
           <p class="mb-0">
             <a href="https://twitter.com/jclermont" target="_blank">
               Joel Clermont
