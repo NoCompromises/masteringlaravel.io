@@ -3,7 +3,7 @@
     <div class="container pt-3 mb-5">
       <div class="row">
         <div class="col-12 col-md-7 text-center text-md-start">
-          <router-link :to="{ name: 'ValidationHome' }">
+          <router-link :to="{ name: 'Home' }">
             <img src="./assets/logo.svg" alt="No Compromises Logo" />
             <h1>Mastering Laravel</h1>
           </router-link>
