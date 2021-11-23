@@ -22,14 +22,34 @@
 
   <router-view />
 
-  <footer>
-    <div class="container p-3 small text-center">
-      &copy; 2021
-      <a
-        href="https://nocompromises.io?ref=worksheet"
-        title="We _know_ Laravel!"
-        >No Compromises LLC</a
-      >
+  <footer class="py-4">
+    <div class="container">
+      <section class="row">
+        <div class="col-md mb-4 mb-md-0">
+          <h6>Brought to you by:</h6>
+          <p class="mb-0">
+            <a href="https://twitter.com/jclermont" target="_blank">
+              Joel Clermont
+            </a>
+            /
+            <a href="https://twitter.com/aaronsaray" target="_blank">
+              Aaron Saray
+            </a>
+          </p>
+          <p class="mb-0">Milwaukee, Wisconsin</p>
+        </div>
+        <div class="col-md">
+          <h6>No Compromises Podcast</h6>
+          <iframe
+            width="100%"
+            height="180"
+            frameborder="no"
+            scrolling="no"
+            seamless
+            src="https://share.transistor.fm/e/08b0bc00"
+          ></iframe>
+        </div>
+      </section>
     </div>
   </footer>
 </template>
