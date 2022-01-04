@@ -1,7 +1,7 @@
 <template>
   <main>
     <section class="mb-5">
-      <div class="container">
+      <div class="container overflow-hidden">
         <div class="row hero gx-5">
           <div class="col-12 col-lg-6 mb-5 mb-md-0">
             <div class="row h-100">
