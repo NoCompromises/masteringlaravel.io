@@ -79,11 +79,13 @@
               </div>
             </div>
             <div class="mt-4">
-              <a href="#interior-link" class="btn btn-primary" target="_blank"
+              <router-link
+                :to="{ name: 'SecurityVideo' }"
+                class="btn btn-primary"
                 >Learn more about the course<i
                   class="bi bi-caret-right-fill"
                 ></i
-              ></a>
+              ></router-link>
             </div>
           </div>
         </div>
