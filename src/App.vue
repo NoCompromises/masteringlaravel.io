@@ -27,6 +27,11 @@
               class="me-3 d-inline-block"
               >Validation Book</router-link
             >
+            <router-link
+              :to="{ name: 'SecurityLandingPage' }"
+              class="me-3 d-inline-block"
+              >App Security</router-link
+            >
             <a
               href="https://nocompromises.io?ref=ml"
               target="_blank"
