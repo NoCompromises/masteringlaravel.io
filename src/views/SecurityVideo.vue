@@ -31,7 +31,7 @@
                 class="btn btn-success me-3"
                 >Get it at Infosec Institute</a
               >
-              use code <strong>AARONSARAY</strong> to save 50%
+              use code <strong>SARAY50</strong> to save 50%
             </div>
 
             <p>
@@ -101,8 +101,8 @@
             <ol>
               <li>Go to the Infosec Institute Skills page</li>
               <li>
-                Sign up using the <strong>AARONSARAY</strong> coupon to save 50%
-                on any subscription
+                Sign up using the <strong>SARAY50</strong> coupon to save 50% on
+                any subscription
               </li>
               <li>
                 Search out the <strong>Secure Coding in Laravel</strong> course
@@ -117,7 +117,7 @@
                 class="btn btn-success me-3"
                 >Get it at Infosec Institute</a
               >
-              use code <strong>AARONSARAY</strong> to save 50%
+              use code <strong>SARAY50</strong> to save 50%
             </div>
 
             <p>
@@ -172,7 +172,7 @@
               <summary>How does the discount work?</summary>
               <p>
                 It's easy. You enter
-                <strong>AARONSARAY</strong> when you sign up and you save 50% of
+                <strong>SARAY50</strong> when you sign up and you save 50% of
                 your first invoice. If you're subscribing yearly, which we
                 recommend so you have enough time to watch this course and
                 discover others, you'll save $149 on the first year. If you only
@@ -207,7 +207,7 @@
                 class="btn btn-success me-3"
                 >Get it at Infosec Institute</a
               >
-              use code <strong>AARONSARAY</strong> to save 50%
+              use code <strong>SARAY50</strong> to save 50%
             </div>
           </div>
         </div>
