@@ -4,6 +4,8 @@ import HomePage from "../views/HomePage.vue";
 import ValidationHome from "../views/ValidationHome.vue";
 import ValidationWorksheet from "../views/ValidationWorksheet.vue";
 import ValidationBook from "../views/ValidationBook.vue";
+import SecurityLandingPage from "../views/SecurityLandingPage.vue";
+import SecurityVideo from "../views/SecurityVideo.vue";
 import NotFound from "../views/NotFound.vue";
 
 const routes = [
@@ -31,6 +33,22 @@ const routes = [
     component: ValidationBook,
     meta: {
       title: "Laravel Validation Book",
+    },
+  },
+  {
+    path: "/security",
+    name: "SecurityLandingPage",
+    component: SecurityLandingPage,
+    meta: {
+      title: "Laravel App Security",
+    },
+  },
+  {
+    path: "/security/video",
+    name: "SecurityVideo",
+    component: SecurityVideo,
+    meta: {
+      title: "Securing Coding Laravel Video Course",
     },
   },
   {

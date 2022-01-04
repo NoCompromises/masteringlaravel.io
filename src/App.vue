@@ -13,17 +13,29 @@
             <a
               href="https://nocompromises.gumroad.com/l/little-laravel"
               target="_blank"
-              class="me-3"
+              class="me-3 d-inline-block"
               >Tips</a
             >
-            <router-link :to="{ name: 'ValidationWorksheet' }" class="me-sm-3"
+            <router-link
+              :to="{ name: 'ValidationWorksheet' }"
+              class="me-sm-3 d-inline-block"
               >Validation Worksheet</router-link
             >
             <br class="d-sm-none" />
-            <router-link :to="{ name: 'ValidationBook' }" class="me-3"
+            <router-link
+              :to="{ name: 'ValidationBook' }"
+              class="me-3 d-inline-block"
               >Validation Book</router-link
             >
-            <a href="https://nocompromises.io?ref=ml" target="_blank"
+            <router-link
+              :to="{ name: 'SecurityLandingPage' }"
+              class="me-3 d-inline-block"
+              >App Security</router-link
+            >
+            <a
+              href="https://nocompromises.io?ref=ml"
+              target="_blank"
+              class="d-inline-block"
               >Contact Us</a
             >
           </nav>
