@@ -17,13 +17,12 @@
               platform.
             </p>
 
-            <div class="youtube-container">
-              <iframe
-                src="https://www.youtube.com/embed/epRhZtsYSNE?rel=0"
-                allowfullscreen=""
-                title="YouTube Video"
-              ></iframe>
-            </div>
+            <video controls playsinline>
+              <source
+                src="../assets/secure-coding-in-laravel-teaser.mp4"
+                type="video/mp4"
+              />
+            </video>
 
             <div class="cta-video my-4 text-center">
               <a
@@ -228,20 +227,8 @@ h4 {
   font-size: 1.2rem;
   font-weight: 500;
 }
-.youtube-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-  }
+video {
+  width: 100%;
 }
 .cta-video {
   padding: 0.4rem;
