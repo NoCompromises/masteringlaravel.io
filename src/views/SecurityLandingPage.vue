@@ -30,7 +30,7 @@
             <h3 class="mb-3">7 Steps to a Secure Laravel App</h3>
             <div class="d-flex">
               <div class="flex-shrink-0">
-                <a href="#gumroad-link" target="_blank">
+                <a href="https://gum.co/securing-laravel?wanted=true">
                   <img
                     src="../assets/7-steps-security-cover.jpg"
                     alt="7 steps book cover"
@@ -50,7 +50,9 @@
               </div>
             </div>
             <div class="mt-4">
-              <a href="#gumroad-link" class="btn btn-primary" target="_blank"
+              <a
+                href="https://gum.co/securing-laravel?wanted=true"
+                class="btn btn-primary"
                 >Get your FREE copy of the book<i
                   class="bi bi-caret-right-fill"
                 ></i
@@ -111,3 +113,14 @@ h3 {
   }
 }
 </style>
+
+<script>
+export default {
+  name: "SecurityLandingPage",
+  mounted() {
+    let gumroad = document.createElement("script");
+    gumroad.setAttribute("src", "https://gumroad.com/js/gumroad.js");
+    document.body.appendChild(gumroad);
+  },
+};
+</script>
