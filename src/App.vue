@@ -32,11 +32,8 @@
               class="me-3 d-inline-block"
               >App Security</router-link
             >
-            <a
-              href="https://nocompromises.io?ref=ml"
-              target="_blank"
-              class="d-inline-block"
-              >Contact Us</a
+            <router-link :to="{ name: 'ContactUs' }" class="d-inline-block"
+              >Contact Us</router-link
             >
           </nav>
         </div>
