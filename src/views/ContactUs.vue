@@ -14,18 +14,13 @@
             </p>
           </div>
           <div class="col-12 col-md-6 offset-md-1">
-            <form
-              name="contact"
-              method="POST"
-              action="/contact-success"
-              data-netlify="true"
-            >
-              <input type="hidden" name="form-name" value="contact" />
+            <form @submit.prevent="handleSubmit">
               <div class="mb-3">
                 <label for="message">Message</label>
                 <textarea
                   class="form-control"
                   name="message"
+                  v-model="message"
                   rows="5"
                   required
                 ></textarea>
@@ -34,6 +29,7 @@
                 <label for="email">Email</label>
                 <input
                   class="form-control"
+                  v-model="email"
                   type="email"
                   name="email"
                   required
@@ -60,3 +56,28 @@
     </section>
   </main>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      message: "",
+      email: "",
+    };
+  },
+  methods: {
+    handleSubmit() {
+      const formData = new FormData();
+      formData.append("message", this.message);
+      formData.append("email", this.email);
+      formData.append("form-name", "contact");
+
+      fetch("/", {
+        method: "POST",
+        body: formData,
+      }).finally(() => {
+        this.$router.push("contact-success");
+      });
+    },
+  },
+};
+</script>
