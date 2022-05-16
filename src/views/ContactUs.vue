@@ -15,7 +15,12 @@
           </div>
           <div class="col-12 col-md-6 offset-md-1">
             <form name="contact" method="POST" data-netlify="true">
-              <input type="hidden" name="form-name" value="contact" />
+              <input
+                type="hidden"
+                name="form-name"
+                action="/contact-success"
+                value="contact"
+              />
               <div class="form-group">
                 <label for="message">Message</label>
                 <textarea
