@@ -21,7 +21,7 @@
               data-netlify="true"
             >
               <input type="hidden" name="form-name" value="contact" />
-              <div class="form-group">
+              <div class="mb-3">
                 <label for="message">Message</label>
                 <textarea
                   class="form-control"
@@ -30,7 +30,7 @@
                   required
                 ></textarea>
               </div>
-              <div class="form-group">
+              <div class="mb-3">
                 <label for="email">Email</label>
                 <input
                   class="form-control"
@@ -39,7 +39,7 @@
                   required
                 />
               </div>
-              <p>
+              <p class="mb-3">
                 <button type="submit" class="btn btn-primary">Send</button>
               </p>
             </form>
