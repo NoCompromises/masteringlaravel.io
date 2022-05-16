@@ -1,6 +1,8 @@
 import { nextTick } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../views/HomePage.vue";
+import ContactUs from "../views/ContactUs.vue";
+import ContactSuccess from "../views/ContactSuccess.vue";
 import ValidationHome from "../views/ValidationHome.vue";
 import ValidationWorksheet from "../views/ValidationWorksheet.vue";
 import ValidationBook from "../views/ValidationBook.vue";
@@ -13,6 +15,16 @@ const routes = [
     path: "/",
     name: "Home",
     component: HomePage,
+  },
+  {
+    path: "/contact",
+    name: "ContactUs",
+    component: ContactUs,
+  },
+  {
+    path: "/contact-success",
+    name: "ContactSuccess",
+    component: ContactSuccess,
   },
   {
     path: "/validation",
