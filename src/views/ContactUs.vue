@@ -2,9 +2,9 @@
   <main>
     <section class="mb-5">
       <div class="container">
+        <h2 class="h3 mb-4">Send us a note</h2>
         <div class="row hero">
-          <div class="col-12 col-md-5 mb-5 mb-md-0">
-            <h2 class="mb-4">Send us a note</h2>
+          <div class="col-12 col-md-5 mb-3 mb-md-0">
             <p>
               Do you have a question or a topic that you'd like us to discuss on
               the podcast?
