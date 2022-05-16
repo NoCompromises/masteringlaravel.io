@@ -20,24 +20,24 @@
               action="/contact-success"
               data-netlify="true"
             >
-              <p>
+              <div class="form-group">
                 <label for="message">Message</label>
                 <textarea
+                  class="form-control"
                   name="message"
                   rows="5"
                   required
-                  style="display: block; width: 100%"
                 ></textarea>
-              </p>
-              <p>
+              </div>
+              <div class="form-group">
                 <label for="email">Email</label>
                 <input
+                  class="form-control"
                   type="email"
                   name="email"
                   required
-                  style="display: block; width: 100%"
                 />
-              </p>
+              </div>
               <p>
                 <button type="submit" class="btn btn-primary">Send</button>
               </p>
