@@ -13,10 +13,24 @@
           We've written the book on it! Let us teach you everything we know
           about validation rules.
         </p>
-        <router-link :to="{ name: 'ValidationBook' }" class="btn btn-primary">
+        <router-link
+          :to="{ name: 'ValidationBook' }"
+          @click="clickTrack"
+          class="btn btn-primary"
+        >
           Check out the Book
         </router-link>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    clickTrack() {
+      window.fathom.trackGoal("WBQ18BBZ", 0);
+    },
+  },
+};
+</script>
